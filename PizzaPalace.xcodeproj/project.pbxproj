@@ -13,6 +13,9 @@
 		4AFD12A3266BDE990030D928 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AFD12A2266BDE990030D928 /* Preview Assets.xcassets */; };
 		4AFD12A5266BDE990030D928 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD12A4266BDE990030D928 /* Persistence.swift */; };
 		4AFD12A8266BDE990030D928 /* PizzaPalace.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD12A6266BDE990030D928 /* PizzaPalace.xcdatamodeld */; };
+		4AFD12B1266BE1A60030D928 /* RootTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD12B0266BE1A60030D928 /* RootTabView.swift */; };
+		4AFD12B3266BE2000030D928 /* ContentView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD12B2266BE2000030D928 /* ContentView2.swift */; };
+		4AFD12B5266BE20D0030D928 /* ContentView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD12B4266BE20D0030D928 /* ContentView3.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +28,9 @@
 		4AFD12A7266BDE990030D928 /* PizzaPalace.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PizzaPalace.xcdatamodel; sourceTree = "<group>"; };
 		4AFD12A9266BDE990030D928 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4AFD12AA266BDE990030D928 /* PizzaPalace.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PizzaPalace.entitlements; sourceTree = "<group>"; };
+		4AFD12B0266BE1A60030D928 /* RootTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabView.swift; sourceTree = "<group>"; };
+		4AFD12B2266BE2000030D928 /* ContentView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView2.swift; sourceTree = "<group>"; };
+		4AFD12B4266BE20D0030D928 /* ContentView3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView3.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,12 +65,15 @@
 			children = (
 				4AFD129B266BDE970030D928 /* PizzaPalaceApp.swift */,
 				4AFD129D266BDE970030D928 /* ContentView.swift */,
+				4AFD12B2266BE2000030D928 /* ContentView2.swift */,
+				4AFD12B4266BE20D0030D928 /* ContentView3.swift */,
 				4AFD129F266BDE990030D928 /* Assets.xcassets */,
 				4AFD12A4266BDE990030D928 /* Persistence.swift */,
 				4AFD12A9266BDE990030D928 /* Info.plist */,
 				4AFD12AA266BDE990030D928 /* PizzaPalace.entitlements */,
 				4AFD12A6266BDE990030D928 /* PizzaPalace.xcdatamodeld */,
 				4AFD12A1266BDE990030D928 /* Preview Content */,
+				4AFD12B0266BE1A60030D928 /* RootTabView.swift */,
 			);
 			path = PizzaPalace;
 			sourceTree = "<group>";
@@ -147,9 +156,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				4AFD12A8266BDE990030D928 /* PizzaPalace.xcdatamodeld in Sources */,
+				4AFD12B1266BE1A60030D928 /* RootTabView.swift in Sources */,
 				4AFD12A5266BDE990030D928 /* Persistence.swift in Sources */,
 				4AFD129E266BDE970030D928 /* ContentView.swift in Sources */,
+				4AFD12B3266BE2000030D928 /* ContentView2.swift in Sources */,
 				4AFD129C266BDE970030D928 /* PizzaPalaceApp.swift in Sources */,
+				4AFD12B5266BE20D0030D928 /* ContentView3.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
