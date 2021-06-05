@@ -10,6 +10,7 @@ import CoreData
 
 struct User {
     var username = "Me"
+    var password = "823he92389u"
 }
 
 struct ContentView: View {
@@ -25,7 +26,17 @@ struct ContentView: View {
                 Button(action: {
                     print("Button tapped")
                 }) {
-                    Text("Save")
+                    Text("Save Username")
+                }
+                Spacer()
+            }
+            HStack (spacing: 50){
+                Spacer()
+                TextField("Password", text: $user.password)
+                Button(action: {
+                    print("Button tapped")
+                }) {
+                    Text("Save Password")
                 }
                 Spacer()
             }
