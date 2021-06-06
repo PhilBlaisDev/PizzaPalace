@@ -13,7 +13,7 @@ struct PizzaPalaceApp: App {
 
     var body: some Scene {
           WindowGroup {
-              RootTabView().environment(\.managedObjectContext, persistenceController.container.viewContext)
+            Login()
           }
       }
 }
