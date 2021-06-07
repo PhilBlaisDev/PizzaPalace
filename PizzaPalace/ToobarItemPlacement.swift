@@ -7,41 +7,90 @@
 
 import SwiftUI
 
+final class MenuItems: ObservableObject {
+    @Published var allMenuItems: [ViewType] = [
+        ViewType.init(type: "Quick Orders", order: 1, icon: "cursorarrow.click"),
+        ViewType.init(type: "Sales", order: 2, icon: "dollarsign.circle.fill"),
+        ViewType.init(type: "Inventory", order: 3, icon: "list.triangle"),
+        ViewType.init(type: "Customers", order: 4, icon: "person.circle.fill"),
+        ViewType.init(type: "Suppliers", order: 5, icon: "plus.square.fill"),
+        ViewType.init(type: "Reports", order: 6, icon: "contextualmenu.and.cursorarrow"),
+        ViewType.init(type: "Loyalty Program", order: 7, icon: "giftcard.fill"),
+        ViewType.init(type: "Settings", order: 8, icon: "gear")
+    ]
+}
+
 struct ToobarItemPlacement: View {
-    private let tabs = ["Setup", "Data Entry", "Scheduling", "Loyalty"]
-    @State private var selectedTab = 0
+    @StateObject var menu = MenuItems()
+    @State private var selectedMenuItem: String? = "Quick Orders"
     
     var body: some View {
-        VStack {
-            ChildTabView(title: self.tabs[self.selectedTab], index: self.selectedTab).background(Color.white)
+        VStack(spacing: 0){
+            NavigationView {
+               Sidebar(
+                    menu: menu,
+                    selectedMenuItem: $selectedMenuItem
+               )
+           }
         }
-        .toolbar {
-            ToolbarItem(placement: .principal) {
-                Picker("", selection: $selectedTab) {
-                    ForEach(tabs.indices) { i in
-                        Text(self.tabs[i])
-                            .tag(i)
-                    }
-                }
-                .pickerStyle(SegmentedPickerStyle())
-            }
-        }
-        .frame(minWidth: 800, minHeight: 400)
-        .background(Color.white)
     }
 }
 
-struct ChildTabView: View {
-    var title: String
-    var index: Int
+struct ViewType: Identifiable, Hashable {
+    let id = UUID()
+    let type: String
+    let order: Int
+    let icon: String
+}
+
+
+struct Sidebar: View {
+    @ObservedObject var menu: MenuItems
+    @Binding var selectedMenuItem: String?
 
     var body: some View {
-        switch(index){
-            case 0: Setup()
-            case 1: DataEntry()
-            case 2: PopularTimes()
-            case 3: CLDP()
-            default: Login()
+        List {
+            ForEach(menu.allMenuItems, id: \.self) { folder in
+                NavigationLink(
+                    destination: FullView(type: folder.type)
+                        .frame(maxWidth: .infinity)
+                        .background(Color.white)
+                        .navigationTitle(selectedMenuItem ?? ""),
+                    tag: folder.type,
+                    selection: $selectedMenuItem
+                ) {
+                    HStack{
+            
+                        Image(systemName: folder.icon)
+                            .foregroundColor(Color.white)
+                        Text(folder.type).font(.headline)
+                            .foregroundColor(Color.white)
+                            
+                    }
+                   
+                }
+                .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+            
+            }
+        }
+        .background(Color.black)
+        .listStyle(SidebarListStyle())
+    }
+}
+
+struct FullView: View {
+    let type: String
+    var body: some View {
+        switch(type){
+            case "Quick Orders": Orders()
+            case "Sales": Sales()
+            case "Inventory": Inventory()
+            case "Customers": Customers()
+            case "Suppliers": Suppliers()
+            case "Reports": Reports()
+            case "Loyalty Program": CLDP()
+            case "settings": Setup()
+            default: Setup()
         }
     }
 }
@@ -59,8 +108,8 @@ struct MenuButtonStyle: ButtonStyle {
             
             // Indigo background color on release, yellow on press.
             .background(!configuration.isPressed ?
-                            Color(.systemIndigo) :
-                            Color(.systemYellow))
+                            Color.init(red: 133/255, green: 194/255, blue: 39/255) :
+                            Color.init(red: 218/255, green: 36/255, blue: 28/255) )
             
             // White text color on release, black on press.
             .foregroundColor(!configuration.isPressed ? .white : .black)
@@ -68,4 +117,6 @@ struct MenuButtonStyle: ButtonStyle {
             .cornerRadius(8)
     }
 }
+
+
 

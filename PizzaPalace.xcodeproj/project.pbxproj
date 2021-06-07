@@ -14,10 +14,14 @@
 		4AFD12A5266BDE990030D928 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD12A4266BDE990030D928 /* Persistence.swift */; };
 		4AFD12A8266BDE990030D928 /* PizzaPalace.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD12A6266BDE990030D928 /* PizzaPalace.xcdatamodeld */; };
 		4AFD12B3266BE2000030D928 /* Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD12B2266BE2000030D928 /* Setup.swift */; };
-		4AFD12B5266BE20D0030D928 /* DataEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD12B4266BE20D0030D928 /* DataEntry.swift */; };
-		4AFD12B7266C17900030D928 /* PopularTimes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD12B6266C17900030D928 /* PopularTimes.swift */; };
+		4AFD12B5266BE20D0030D928 /* Sales.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD12B4266BE20D0030D928 /* Sales.swift */; };
+		4AFD12B7266C17900030D928 /* Customers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD12B6266C17900030D928 /* Customers.swift */; };
 		4AFD12B9266C17930030D928 /* CLDP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD12B8266C17930030D928 /* CLDP.swift */; };
 		4AFD12BB266C3E6A0030D928 /* ToobarItemPlacement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD12BA266C3E6A0030D928 /* ToobarItemPlacement.swift */; };
+		4AFD12BF266D988D0030D928 /* Orders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD12BE266D988D0030D928 /* Orders.swift */; };
+		4AFD12C1266D98A90030D928 /* Inventory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD12C0266D98A90030D928 /* Inventory.swift */; };
+		4AFD12C3266D98DD0030D928 /* Suppliers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD12C2266D98DD0030D928 /* Suppliers.swift */; };
+		4AFD12C5266D99840030D928 /* Reports.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD12C4266D99840030D928 /* Reports.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,10 +35,14 @@
 		4AFD12A9266BDE990030D928 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4AFD12AA266BDE990030D928 /* PizzaPalace.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PizzaPalace.entitlements; sourceTree = "<group>"; };
 		4AFD12B2266BE2000030D928 /* Setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setup.swift; sourceTree = "<group>"; };
-		4AFD12B4266BE20D0030D928 /* DataEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataEntry.swift; sourceTree = "<group>"; };
-		4AFD12B6266C17900030D928 /* PopularTimes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularTimes.swift; sourceTree = "<group>"; };
+		4AFD12B4266BE20D0030D928 /* Sales.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sales.swift; sourceTree = "<group>"; };
+		4AFD12B6266C17900030D928 /* Customers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customers.swift; sourceTree = "<group>"; };
 		4AFD12B8266C17930030D928 /* CLDP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLDP.swift; sourceTree = "<group>"; };
 		4AFD12BA266C3E6A0030D928 /* ToobarItemPlacement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToobarItemPlacement.swift; sourceTree = "<group>"; };
+		4AFD12BE266D988D0030D928 /* Orders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orders.swift; sourceTree = "<group>"; };
+		4AFD12C0266D98A90030D928 /* Inventory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inventory.swift; sourceTree = "<group>"; };
+		4AFD12C2266D98DD0030D928 /* Suppliers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Suppliers.swift; sourceTree = "<group>"; };
+		4AFD12C4266D99840030D928 /* Reports.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reports.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,9 +78,13 @@
 				4AFD129B266BDE970030D928 /* PizzaPalaceApp.swift */,
 				4AFD129D266BDE970030D928 /* Login.swift */,
 				4AFD12B2266BE2000030D928 /* Setup.swift */,
-				4AFD12B4266BE20D0030D928 /* DataEntry.swift */,
-				4AFD12B6266C17900030D928 /* PopularTimes.swift */,
+				4AFD12B4266BE20D0030D928 /* Sales.swift */,
+				4AFD12BE266D988D0030D928 /* Orders.swift */,
+				4AFD12C4266D99840030D928 /* Reports.swift */,
+				4AFD12B6266C17900030D928 /* Customers.swift */,
+				4AFD12C0266D98A90030D928 /* Inventory.swift */,
 				4AFD12B8266C17930030D928 /* CLDP.swift */,
+				4AFD12C2266D98DD0030D928 /* Suppliers.swift */,
 				4AFD129F266BDE990030D928 /* Assets.xcassets */,
 				4AFD12A4266BDE990030D928 /* Persistence.swift */,
 				4AFD12A9266BDE990030D928 /* Info.plist */,
@@ -161,14 +173,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AFD12C5266D99840030D928 /* Reports.swift in Sources */,
 				4AFD12A8266BDE990030D928 /* PizzaPalace.xcdatamodeld in Sources */,
 				4AFD12BB266C3E6A0030D928 /* ToobarItemPlacement.swift in Sources */,
+				4AFD12C1266D98A90030D928 /* Inventory.swift in Sources */,
 				4AFD12A5266BDE990030D928 /* Persistence.swift in Sources */,
 				4AFD129E266BDE970030D928 /* Login.swift in Sources */,
 				4AFD12B3266BE2000030D928 /* Setup.swift in Sources */,
 				4AFD129C266BDE970030D928 /* PizzaPalaceApp.swift in Sources */,
-				4AFD12B5266BE20D0030D928 /* DataEntry.swift in Sources */,
-				4AFD12B7266C17900030D928 /* PopularTimes.swift in Sources */,
+				4AFD12B5266BE20D0030D928 /* Sales.swift in Sources */,
+				4AFD12C3266D98DD0030D928 /* Suppliers.swift in Sources */,
+				4AFD12BF266D988D0030D928 /* Orders.swift in Sources */,
+				4AFD12B7266C17900030D928 /* Customers.swift in Sources */,
 				4AFD12B9266C17930030D928 /* CLDP.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

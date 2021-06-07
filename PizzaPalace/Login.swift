@@ -24,36 +24,59 @@ struct Login: View {
                 ToobarItemPlacement()
             } else {
                 Spacer()
-                Image("pizza")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(maxWidth: 180)
-                        .padding([.top, .horizontal], 15.0)
+                HStack (spacing: 50){
+                    Spacer()
+                    Image("pizza")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(maxWidth: 180)
+                            .padding([.top, .horizontal], 15.0)
+                    }
                 Spacer()
                 HStack (spacing: 50){
                     Spacer()
                     VStack(spacing:20){
-                        Text("Username:")
-                        Text("Password:")
+                        HStack(){
+                            Image(systemName: "envelope")
+                                .foregroundColor(.green)
+                            TextField("Username", text: $user.username).textFieldStyle(PlainTextFieldStyle())
+                                
+                        }.frame(height: 60)
+                        .padding(.horizontal, 20)
+                        .background(Color.white)
+                        .cornerRadius(8)
+                        .padding(.horizontal, 20)
+                    
+                        HStack(){
+                            Image(systemName: "lock")
+                                .foregroundColor(.green)
+                            SecureField("Password", text: $user.password)
+                                .textFieldStyle(PlainTextFieldStyle())
+                                
+                        }.frame(height: 60)
+                        .padding(.horizontal, 20)
+                        .background(Color.white)
+                        .cornerRadius(8)
+                        .padding(.horizontal, 20)
                     }
-                    VStack(spacing:20){
-                        TextField("Username", text: $user.username)
-                        TextField("Password", text: $user.password)
+                    VStack {
+                        Button(action: {
+                            self.showLoginView = true
+                        }, label: {
+                            Text("Login")
+                        })
+                        .padding(25)
+                        .foregroundColor(.blue)
+                        .cornerRadius(8)
                     }
-                    Spacer()
-                    Button(action: {
-                        self.showLoginView = true
-                    }, label: {
-                        Text("Login")
-                    })
-                    .padding(25)
-                    .foregroundColor(.blue)
-                    .cornerRadius(8)
-                    Spacer()
+                   Spacer()
+
                 }
                 Spacer()
             }
-            }
+        }
+        .background(Image("pizza_bg").resizable().aspectRatio(contentMode: .fill))
+        .buttonStyle(MenuButtonStyle())
     }
 }
 
@@ -61,5 +84,12 @@ struct Login: View {
 struct Login_Previews: PreviewProvider {
     static var previews: some View {
         Login().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+    }
+}
+
+extension NSTextField {
+    open override var focusRingType: NSFocusRingType {
+        get { .none }
+        set { }
     }
 }
