@@ -100,7 +100,7 @@ struct Login: View {
                 Spacer()
             }
         }
-        .background(Image("pizza_bg").resizable().aspectRatio(contentMode: .fill))
+        .background(!showLoginView ? Image("pizza_bg").resizable().aspectRatio(contentMode: .fill) : Image("white_bg").resizable().aspectRatio(contentMode: .fill))
         .buttonStyle(MenuButtonStyle())
     }
 }

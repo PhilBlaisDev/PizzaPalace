@@ -11,9 +11,6 @@ import CoreData
 struct Orders: View {
     @Environment(\.managedObjectContext) private var viewContext
 
-    
-    
-    
     var body: some View {
         HStack(spacing:0){
             VStack(spacing: 0){
