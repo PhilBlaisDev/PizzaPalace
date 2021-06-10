@@ -8,14 +8,19 @@
 import SwiftUI
 import CoreData
 
-struct User {
+struct UserObject {
     var username = "Me"
     var password = "823he92389u"
 }
 
 struct Login: View {
     @Environment(\.managedObjectContext) private var viewContext
-    @State var user: User = User(username: "Test User")
+    
+    @FetchRequest(sortDescriptors:[])
+    var users: FetchedResults<User>
+    
+    
+    @State var user: UserObject = UserObject(username: "Test User")
     @State var showLoginView: Bool = false
 
     var body: some View {
@@ -29,13 +34,13 @@ struct Login: View {
                     Image("pizza")
                             .resizable()
                             .scaledToFit()
-                            .frame(maxWidth: 180)
+                            .frame(maxWidth: 250)
                             .padding([.top, .horizontal], 15.0)
                     }
                 Spacer()
                 HStack (spacing: 50){
                     Spacer()
-                    VStack(spacing:20){
+                    VStack(spacing:10){
                         HStack(){
                             Image(systemName: "envelope")
                                 .foregroundColor(.green)
@@ -58,20 +63,40 @@ struct Login: View {
                         .background(Color.white)
                         .cornerRadius(8)
                         .padding(.horizontal, 20)
+                        
+                        HStack(){
+                            Button(action: {
+                                
+                            }, label: {
+                                Text("Forgot Password").foregroundColor(Color.red) .font(Font.headline.weight(.bold))
+                            }).buttonStyle(PlainButtonStyle())
+                            .padding(.horizontal, 30)
+                                Spacer()
+                        }.frame(height: 10)
                     }
                     VStack {
+                        
                         Button(action: {
                             self.showLoginView = true
                         }, label: {
                             Text("Login")
                         })
-                        .padding(25)
-                        .foregroundColor(.blue)
-                        .cornerRadius(8)
-                    }
+                        Spacer()
+                        Button(action: {
+                            
+                        }, label: {
+                            Text("Need Help?").foregroundColor(Color.red).font(Font.headline.weight(.bold))
+                        }).buttonStyle(PlainButtonStyle())
+                        Spacer()
+                    }.frame(height: 120)
                    Spacer()
-
                 }
+                .padding(.leading, 20)
+                .padding(.trailing, 20)
+                .padding(.top, 25)
+                .padding(.bottom, 20)
+                .background(Color.init(red: 133/255, green: 194/255, blue: 39/255, opacity: 0.9))
+                
                 Spacer()
             }
         }

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreData
 
 final class MenuItems: ObservableObject {
     @Published var allMenuItems: [ViewType] = [
@@ -25,7 +26,7 @@ struct ToobarItemPlacement: View {
     @State private var selectedMenuItem: String? = "Quick Orders"
     
     var body: some View {
-        VStack(spacing: 0){
+        VStack(spacing: 10){
             NavigationView {
                Sidebar(
                     menu: menu,
@@ -73,6 +74,7 @@ struct Sidebar: View {
             
             }
         }
+        .padding(.vertical, 20)
         .background(Color.black)
         .listStyle(SidebarListStyle())
     }
@@ -108,12 +110,11 @@ struct MenuButtonStyle: ButtonStyle {
             
             // Indigo background color on release, yellow on press.
             .background(!configuration.isPressed ?
-                            Color.init(red: 133/255, green: 194/255, blue: 39/255) :
-                            Color.init(red: 218/255, green: 36/255, blue: 28/255) )
+                Color.init(red: 218/255, green: 36/255, blue: 28/255) :
+                            Color.init(red: 133/255, green: 194/255, blue: 39/255))
             
             // White text color on release, black on press.
             .foregroundColor(!configuration.isPressed ? .white : .black)
-     
             .cornerRadius(8)
     }
 }

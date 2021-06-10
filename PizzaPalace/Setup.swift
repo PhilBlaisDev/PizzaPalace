@@ -8,25 +8,22 @@
 import SwiftUI
 import CoreData
 
-struct Orders: View {
+struct Setup: View {
     @Environment(\.managedObjectContext) private var viewContext
 
-    
-    
-    
     var body: some View {
         HStack(spacing:0){
             VStack(spacing: 0){
                 Spacer()
-                Text("Orders")
+                Text("Setup")
                 Spacer()
             }
         }.background(Color.white)
     }
 }
 
-struct Orders_Previews: PreviewProvider {
+struct Setup_Previews: PreviewProvider {
     static var previews: some View {
-        Orders().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        Setup().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
