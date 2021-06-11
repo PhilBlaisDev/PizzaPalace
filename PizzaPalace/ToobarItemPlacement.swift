@@ -47,7 +47,7 @@ struct ToobarItemPlacement: View {
                         .foregroundColor(Color.white)
                 }
             })
-        }.background(Color.black)
+        }.background(SwiftUI.Color.black.edgesIgnoringSafeArea(.all))
     }
 }
 
@@ -72,41 +72,37 @@ struct Sidebar: View {
                 .padding(.top, 10)
             List {
                 ForEach(menu.allMenuItems, id: \.self) { folder in
-                    NavigationLink(
-                        destination: FullView(type: folder.type)
-                            .frame(maxWidth: .infinity)
-                            .background(Color.white)
-                            .navigationTitle(selectedMenuItem ?? ""),
-                        tag: folder.type,
-                        selection: $selectedMenuItem
-                    ) {
-                        HStack{
-                            Image(systemName: folder.icon)
-                                .foregroundColor(Color.white)
-                            Text(folder.type).font(.headline)
-                                .foregroundColor(Color.white)
-                                
+                        NavigationLink(
+                            destination: FullView(type: folder.type)
+                                .frame(maxWidth: .infinity)
+                                .background(Color.white)
+                                .navigationTitle(selectedMenuItem ?? ""),
+                            tag: folder.type,
+                            selection: $selectedMenuItem
+                        ) {
+                                HStack{
+                                    Image(systemName: folder.icon)
+                                        .foregroundColor(Color.white)
+                                        .font(.system(size: 18))
+                                    Text(folder.type)
+                                        .foregroundColor(Color.white)
+                                        .font(.system(size: 18))
+                                }
                         }
-                       
-                    }
-                    
                 }
             }
-            .padding(.vertical, 20)
-            .listStyle(SidebarListStyle())
-            .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
-
-            
-            Spacer()
             HStack{
                 Image(systemName: "questionmark.circle.fill")
                     .foregroundColor(Color.white)
-                Text("Help").font(.headline)
+                    .font(.system(size: 18))
+                Text("Help")
                     .foregroundColor(Color.white)
+                    .font(.system(size: 18))
                 Spacer()
                     
             }.padding(20)
-        }.background(Color.black)
+        }
+        .background(Color.black)
     }
 }
 

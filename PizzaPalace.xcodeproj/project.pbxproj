@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4A40FEAD26724A5600631543 /* QuickMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A40FEAC26724A5600631543 /* QuickMenu.swift */; };
+		4A7F002D2673108C0013F08C /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7F002C2673108C0013F08C /* SheetView.swift */; };
 		4AFD129C266BDE970030D928 /* PizzaPalaceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD129B266BDE970030D928 /* PizzaPalaceApp.swift */; };
 		4AFD129E266BDE970030D928 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD129D266BDE970030D928 /* Login.swift */; };
 		4AFD12A0266BDE990030D928 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AFD129F266BDE990030D928 /* Assets.xcassets */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		4A40FEAC26724A5600631543 /* QuickMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickMenu.swift; sourceTree = "<group>"; };
+		4A7F002C2673108C0013F08C /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
 		4AFD1298266BDE970030D928 /* PizzaPalace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PizzaPalace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AFD129B266BDE970030D928 /* PizzaPalaceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaPalaceApp.swift; sourceTree = "<group>"; };
 		4AFD129D266BDE970030D928 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				4AFD12A6266BDE990030D928 /* PizzaPalace.xcdatamodeld */,
 				4AFD12A1266BDE990030D928 /* Preview Content */,
 				4AFD12BA266C3E6A0030D928 /* ToobarItemPlacement.swift */,
+				4A7F002C2673108C0013F08C /* SheetView.swift */,
 			);
 			path = PizzaPalace;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 				4AFD12A5266BDE990030D928 /* Persistence.swift in Sources */,
 				4AFD129E266BDE970030D928 /* Login.swift in Sources */,
 				4AFD12B3266BE2000030D928 /* Setup.swift in Sources */,
+				4A7F002D2673108C0013F08C /* SheetView.swift in Sources */,
 				4AFD129C266BDE970030D928 /* PizzaPalaceApp.swift in Sources */,
 				4AFD12B5266BE20D0030D928 /* Sales.swift in Sources */,
 				4AFD12C3266D98DD0030D928 /* Suppliers.swift in Sources */,
