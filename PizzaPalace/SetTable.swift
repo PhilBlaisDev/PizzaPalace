@@ -23,47 +23,117 @@ struct SetTable: View {
             leftSide()
             rightSide()
         }.background(Color.white)
-        .navigationTitle("Back")
+        .navigationTitle("")
         .toolbar {
-            ToolbarItem(placement: .navigation) {
-                Button(action: {
-                    self.displayViewId = 1
-                }) {
-                   Label("Back", systemImage: "chevron.left")
-               }
+            ToolbarItemGroup(placement: .navigation) {
+                VStack(alignment: .center){
+                    HStack(alignment: .center){
+                        Button(action: {
+                            self.displayViewId = 1
+                        }) {
+                            Label("Back", systemImage: "chevron.left")
+                        }
+                        Spacer()
+                        Text("Order 72")
+                        Spacer()
+                        Button(action: {
+                            self.displayViewId = 1
+                        }) {
+                            Label("Back 3", systemImage: "chevron.right")
+                        }
+                    }
+                }
+
+
            }
         }
     }
     
     fileprivate func leftSide() -> some View {
-        return VStack(alignment: .leading){
+        return VStack(alignment: .center){
             HStack{
-                Text("Some title")
+                Button(action: {
+
+
+                }) {
+                    Label("Server name", systemImage: "person.circle.fill")
+                }
                 Spacer()
-                Text("Btn")
+
+                Button(action: {
+
+                }) {
+                    Image(systemName: "ellipsis")
+                }.buttonStyle(PlainButtonStyle())
+                .padding()
             }
             
-            HStack{
-                Text("Some title")
-                Spacer()
-                Text("Btn")
+            List{
+
+
             }
             
             Spacer()
-            Text("List")
-            Spacer()
-            Text("Total")
+            Text("Discounts:")
+            Text("Sub Total:")
+            Text("Surcharge:")
+            Text("Tax:")
             Spacer()
             HStack{
-                Text("Some title")
-                Spacer()
-                Text("Btn")
+                Button(action: {
+
+
+                }) {
+                    Text("Cancel")
+                }
+                Button(action: {
+
+
+                }) {
+                    Text("Hold")
+                }
+                Button(action: {
+
+
+                }) {
+                    Text("Send")
+                }
+                Text("Total: ")
+                Text("$32.23")
             }
             
             HStack{
-                Text("Some title")
-                Spacer()
-                Text("Btn")
+                Button(action: {
+
+                }) {
+                    Image(systemName: "ellipsis")
+                }.buttonStyle(PlainButtonStyle())
+                        .padding()
+                Button(action: {
+
+                }) {
+                    Image(systemName: "ellipsis")
+                }.buttonStyle(PlainButtonStyle())
+                        .padding()
+                Button(action: {
+
+                }) {
+                    Image(systemName: "ellipsis")
+                }.buttonStyle(PlainButtonStyle())
+                        .padding()
+                Button(action: {
+
+                }) {
+                    Image(systemName: "ellipsis")
+                }.buttonStyle(PlainButtonStyle())
+                        .padding()
+
+                Button(action: {
+
+                }) {
+                    Text("Pay")
+                }.buttonStyle(PlainButtonStyle())
+                        .padding()
             }
         }
         .background(Color.init(red: 0.5, green: 0.5, blue: 0.5, opacity: 0.5))
@@ -71,7 +141,7 @@ struct SetTable: View {
     }
     
     fileprivate func rightSide() -> some View {
-        return VStack(alignment: .leading, spacing: 0){
+        return VStack(alignment: .center, spacing: 0){
             Text("Category").font(.largeTitle).padding(.horizontal, 10)
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing:0){
