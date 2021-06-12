@@ -16,45 +16,79 @@ struct MenuItem {
 }
 
 struct QuickMenu: View {
+    @Binding var displayViewId: Int
+
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.presentationMode) var presentationMode
     @State private var showingSheet = false
-
-    let columns = Array(repeating: GridItem(.flexible(minimum: 60), spacing: 5, alignment: .top), count: 2)
-    let array = [MenuItem(id: 0, title: "Create Customer account"), MenuItem(id: 1, title: "Place Order"), MenuItem(id: 2, title: "Make a payment"), MenuItem(id: 3, title: "Make a Reservation")]
+    private let squareDimension:CGFloat = 170.0
+    private let btnFontSize:CGFloat = 22
     
     var body: some View {
-        HStack(spacing:0){
-            VStack(spacing: 0){
-                LazyVGrid(columns: columns, spacing: 5) {
-                    ForEach(array, id: \.id) { menuItem in
-                        Button(action: {
-                            showingSheet.toggle()
-                        }, label: {
-                            Text(menuItem.title)
-                                .frame(minWidth: 200, maxWidth: 200, minHeight: 200, maxHeight: 200)
-                                .padding()
-                                .font(.system(size: 24))
-                                .multilineTextAlignment(.center)
-                        }).padding().buttonStyle(SquareButtonStyle())
-                        .sheet(isPresented: $showingSheet) {
-                                    SheetView()
-                                }
-                    }
-                }
+        VStack(spacing: 0){
+            HStack(spacing:0){
+                Button(action: {
+                    self.displayViewId = 2
+                }, label: {
+                    Text("Create Customer account")
+                        .frame(minWidth: squareDimension, maxWidth: squareDimension, minHeight: squareDimension, maxHeight: squareDimension)
+                        .padding()
+                        .font(.system(size: btnFontSize))
+                        .multilineTextAlignment(.center)
+                })
+                .padding()
+                .buttonStyle(SquareButtonStyle())
+
+                Button(action: {
+                    self.displayViewId = 3
+                }, label: {
+                    Text("Place Order")
+                        .frame(minWidth: squareDimension, maxWidth: squareDimension, minHeight: squareDimension, maxHeight: squareDimension)
+                        .padding()
+                        .font(.system(size: btnFontSize))
+                        .multilineTextAlignment(.center)
+                })
+                .padding()
+                .buttonStyle(SquareButtonStyle())
                 Spacer()
             }
+            
+            HStack(spacing:0){
+                Button(action: {
+                    self.displayViewId = 4
+                }, label: {
+                    Text("Make a payment")
+                        .frame(minWidth: squareDimension, maxWidth: squareDimension, minHeight: squareDimension, maxHeight: squareDimension)
+                        .padding()
+                        .font(.system(size: btnFontSize))
+                        .multilineTextAlignment(.center)
+                })
+                .padding()
+                .buttonStyle(SquareButtonStyle())
+
+                Button(action: {
+                    self.displayViewId = 5
+                }, label: {
+                    Text("Make a Reservation")
+                        .frame(minWidth: squareDimension, maxWidth: squareDimension, minHeight: squareDimension, maxHeight: squareDimension)
+                        .padding()
+                        .font(.system(size: btnFontSize))
+                        .multilineTextAlignment(.center)
+                })
+                .padding()
+                .buttonStyle(SquareButtonStyle())
+                Spacer()
+            }
+            Spacer()
         }.background(Color.white)
     }
 }
 
-struct QuickMenu_Previews: PreviewProvider {
-    static var previews: some View {
-        QuickMenu().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-    }
-}
-
-
+//struct QuickMenu_Previews: PreviewProvider {
+//    static var previews: some View {
+//        QuickMenu().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+//    }
+//}
 
 struct SquareButtonStyle: ButtonStyle {
     func makeBody(configuration: Self.Configuration) -> some View {

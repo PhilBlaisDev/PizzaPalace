@@ -24,30 +24,43 @@ final class MenuItems: ObservableObject {
 }
 
 struct ToobarItemPlacement: View {
+    @Binding var displayViewId: Int
+
     @StateObject var menu = MenuItems()
     @State private var selectedMenuItem: String? = "Quick Menu"
+    let array = ["My Account", "Log out"]
     
     var body: some View {
         VStack{
             NavigationView {
                Sidebar(
+                    displayViewId: $displayViewId,
                     menu: menu,
                     selectedMenuItem: $selectedMenuItem
-               ).background(SwiftUI.Color.black.edgesIgnoringSafeArea(.all))
+               )
+                .background(SwiftUI.Color.black.edgesIgnoringSafeArea(.all))
            }
         }
         .toolbar {
-            Button(action: {
-                
-            }, label: {
-                HStack(){
-                    Image(systemName: "person.circle.fill")
-                        .foregroundColor(Color.white)
-                    Text("My Profile").font(.headline)
-                        .foregroundColor(Color.white)
+            ToolbarItemGroup() {
+                Menu {
+                    ForEach(array, id: \.self) { item in
+                        Button(action: {  }) {
+                            Text(item)
+                        }
+                    }
+                } label: {
+                    HStack(){
+                        Image(systemName: "person.circle.fill").foregroundColor(Color.black)
+                        Text("My Profile").font(.headline)
+                            .foregroundColor(Color.black)
+                    }
                 }
-            })
-        }.background(SwiftUI.Color.black.edgesIgnoringSafeArea(.all))
+                .background(Color.init(red: 0/255, green: 0/255, blue: 0/255, opacity: 0.1))
+                .cornerRadius(15)
+            }
+        }
+        .background(SwiftUI.Color.black.edgesIgnoringSafeArea(.all))
     }
 }
 
@@ -60,6 +73,7 @@ struct ViewType: Identifiable, Hashable {
 
 
 struct Sidebar: View {
+    @Binding var displayViewId: Int
     @ObservedObject var menu: MenuItems
     @Binding var selectedMenuItem: String?
 
@@ -73,7 +87,7 @@ struct Sidebar: View {
             List {
                 ForEach(menu.allMenuItems, id: \.self) { folder in
                         NavigationLink(
-                            destination: FullView(type: folder.type)
+                            destination: FullView(displayViewId: $displayViewId, type: folder.type)
                                 .frame(maxWidth: .infinity)
                                 .background(Color.white)
                                 .navigationTitle(selectedMenuItem ?? ""),
@@ -100,17 +114,18 @@ struct Sidebar: View {
                     .font(.system(size: 18))
                 Spacer()
                     
-            }.padding(20)
+            }.padding()
         }
         .background(Color.black)
     }
 }
 
 struct FullView: View {
+    @Binding var displayViewId: Int
     let type: String
     var body: some View {
         switch(type){
-            case "Quick Menu": QuickMenu()
+        case "Quick Menu": QuickMenu(displayViewId: $displayViewId)
             case "Orders": Orders()
             case "Sales": Sales()
             case "Inventory": Inventory()
@@ -122,12 +137,6 @@ struct FullView: View {
             case "settings": Setup()
             default: Setup()
         }
-    }
-}
-
-struct ToobarItemPlacement_Previews: PreviewProvider {
-    static var previews: some View {
-        ToobarItemPlacement()
     }
 }
 
@@ -146,6 +155,3 @@ struct MenuButtonStyle: ButtonStyle {
             .cornerRadius(8)
     }
 }
-
-
-
