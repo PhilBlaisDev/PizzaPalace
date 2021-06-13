@@ -22,8 +22,6 @@ struct Login: View {
     @Environment(\.managedObjectContext) private var viewContext
     @ObservedObject var displayedView = DisplayedView()
 
-    @State var showViewType: Int = 0
-
     var body: some View {
         VStack(spacing: 20) {
             if displayedView.displayViewId == 1 {

@@ -8,14 +8,39 @@
 import SwiftUI
 import CoreData
 
+struct PlacedOrder {
+    var category = "Pizza"
+    var subBategory = "12\" Medium"
+    var product = "Pepperoni"
+    var price = 12.00
+}
+
+
 struct SetTable: View {
     @Binding var displayViewId: Int
     @Environment(\.managedObjectContext) private var viewContext
-    private let squareDimension:CGFloat = 80.0
-    private let btnFontSize:CGFloat = 14
+    private let squareDimension:CGFloat = 67.0
+    private let btnFontSize:CGFloat = 12
     private let categoryList = ["Pizza", "Appetizers", "Sides", "Salads", "Drinks", "Desserts", "Pasta"]
-    private let subCategoryList = ["10\" Small", "12\" Medium", "14\" Large", "16 \"X-Large", "24\" XX-Large"]
-    private let productList = ["12 \" Cheese", "12\" Pepperoni", "12\" Veggie", "12\" Hawaiian", "14\" All Dressed", "14\" Meat Lovers"]
+    
+    private let pizzaSubCategoryList = ["10\" \nSmall", "12\" \nMedium", "14\" \nLarge", "16 \" \nX-Large", "24\" \nXX-Large"]
+    private let appiSubCategoryList = ["Wings", "Fries", "Nachos", "Hummus plate", "Pickles", "Olives", "Fried Calamari"]
+    private let sidesSubCategoryList = ["Fries", "Salad", "", "", "", "", "", "", "", ""]
+    private let saladsSubCategoryList = ["Caesar", "Garden", "Chicken", "Greek", "Beet", "Potato"]
+    private let drinksSubCategoryList = ["Beer", "Wine", "Soft Drink", "Juice", "Water"]
+    private let dessertsSubCategoryList = ["Pie", "Cake", "Mousse", "Pudding"]
+    private let pastaSubCategoryList = ["Fettuccine", "Lasagna", "Fusilli", "", "", "", "", "", ""]
+
+    private let pizzaProductList = ["Cheese", "Pepperoni", "Veggie", "Hawaiian", "All Dressed", "Meat Lovers"]
+    private let appiProductList = [""]
+    private let sidesProductList = [""]
+    private let saladsProductList = [""]
+    private let drinksProductList = [""]
+    private let dessertsProductList = [""]
+    private let pastaProductList = [""]
+
+    
+    
     
     var body: some View {
         
@@ -25,27 +50,31 @@ struct SetTable: View {
         }.background(Color.white)
         .navigationTitle("")
         .toolbar {
-            ToolbarItemGroup(placement: .navigation) {
-                VStack(alignment: .center){
-                    HStack(alignment: .center){
+            ToolbarItem(placement: .navigation) {
                         Button(action: {
                             self.displayViewId = 1
                         }) {
                             Label("Back", systemImage: "chevron.left")
-                        }
-                        Spacer()
-                        Text("Order 72")
-                        Spacer()
-                        Button(action: {
-                            self.displayViewId = 1
-                        }) {
-                            Label("Back 3", systemImage: "chevron.right")
-                        }
-                    }
-                }
-
-
+                        }.buttonStyle(PlainButtonStyle()).padding(.horizontal, 20)
            }
+            ToolbarItem(placement: .navigation) {
+                Text("Take Out Order 72").padding(.leading, 120)
+            }
+            
+            ToolbarItem(placement: .primaryAction) {
+                    Button(action: {
+                        self.displayViewId = 1
+                    }) {
+                        Label("Back 3", systemImage: "magnifyingglass")
+                    }.buttonStyle(PlainButtonStyle()).padding(.horizontal, 20)
+            }
+            ToolbarItem(placement: .primaryAction) {
+                    Button(action: {
+                        self.displayViewId = 1
+                    }) {
+                        Label("Back 3", systemImage: "escape")
+                    }.buttonStyle(PlainButtonStyle()).padding(.horizontal, 20)
+            }
         }
     }
     
@@ -56,8 +85,10 @@ struct SetTable: View {
 
 
                 }) {
-                    Label("Server name", systemImage: "person.circle.fill")
-                }
+                    Label("Beatrice Lestrange", systemImage: "person.circle")
+                }.buttonStyle(PlainButtonStyle())
+
+                
                 Spacer()
 
                 Button(action: {
@@ -65,84 +96,208 @@ struct SetTable: View {
                 }) {
                     Image(systemName: "ellipsis")
                 }.buttonStyle(PlainButtonStyle())
-                .padding()
-            }
-            
-            List{
+            }.padding(.horizontal, 20)
+            .padding(.top, 20)
+            .padding(.bottom, 10)
+            VStack{
+                HStack{
+                    VStack(alignment: .leading){
+                        Text("16\" Build your own").bold().font(.title3).frame(width:180, alignment: .leading)
+                        Text("Mozarella").padding(.leading, 20)
+                        Text("Pepperoni").padding(.leading, 20)
+                        Text("Black Olives").padding(.leading, 20)
+                        Text("Basil").padding(.leading, 20)
+                        Text("Mushrooms").padding(.leading, 20)
+                        Text("Cheddar").padding(.leading, 20)
+                    }
+                    Spacer()
+                    VStack(alignment: .trailing){
+                        HStack{
+                            Spacer()
+                            Text("1").bold().font(.title3).padding(.leading, 16)
+                            Spacer()
+                            Text("$12.00").bold().font(.title3)
+                        }
+                        HStack{
+                            Spacer()
+                            Text("1")
+                            Spacer()
+                            Text("$0.00")
+                        }
+                        HStack{
+                            Spacer()
+                            Text("1")
+                            Spacer()
+                            Text("$0.00")
+                        }
+                        HStack{
+                            Spacer()
+                            Text("1")
+                            Spacer()
+                            Text("$1.00")
+                        }
+                        HStack{
+                            Spacer()
+                            Text("1")
+                            Spacer()
+                            Text("$1.00")
+                        }
+                        HStack{
+                            Spacer()
+                            Text("1")
+                            Spacer()
+                            Text("$1.25")
+                        }
+                        HStack{
+                            Spacer()
+                            Text("1")
+                            Spacer()
+                            Text("$1.50")
+                        }
+                    }
+                }.padding()
+                
+                Divider()
+                HStack{
+                    Text("Wings").bold().font(.title3).frame(width:180, alignment: .leading)
+                    Spacer()
+                    Text("1").bold().font(.title3).padding(.leading, 16)
+                    Spacer()
+                    Text("$4.95").bold().font(.title3)
+                }.padding()
+                Divider()
 
+                HStack{
+                    Text("Caesar").bold().font(.title3).frame(width:180, alignment: .leading)
+                    Spacer()
+                    Text("1").bold().font(.title3).padding(.leading, 16)
+                    Spacer()
+                    Text("$4.49").bold().font(.title3)
+                }.padding()
+                Divider()
+                HStack{
+                    Text("Fries").bold().font(.title3).frame(width:180, alignment: .leading)
+                    Spacer()
+                    Text("1").bold().font(.title3).padding(.leading, 16)
+                    Spacer()
+                    Text("$3.49").bold().font(.title3)
 
-            }
+                }.padding()
+                
+            }.background(Color.white)
+            Spacer().background(Color.white)
             
-            Spacer()
-            Text("Discounts:")
-            Text("Sub Total:")
-            Text("Surcharge:")
-            Text("Tax:")
-            Spacer()
+            HStack(alignment: .bottom){
+                Spacer()
+                VStack(alignment: .leading){
+                    Text("Discounts:")
+                    Text("Sub Total:")
+                    Text("Surcharge:")
+                    Text("Tax:")
+                }.padding()
+                
+                VStack(alignment: .trailing){
+                    Text("$0.00")
+                    Text("$29.68")
+                    Text("$0.00")
+                    Text("$2.67")
+                }.padding()
+            }
+            Divider()
             HStack{
                 Button(action: {
 
 
                 }) {
                     Text("Cancel")
-                }
+                }.buttonStyle(PaymentButtonStyle())
                 Button(action: {
 
 
                 }) {
                     Text("Hold")
-                }
+                }.buttonStyle(PaymentButtonStyle())
                 Button(action: {
 
 
                 }) {
                     Text("Send")
-                }
-                Text("Total: ")
-                Text("$32.23")
-            }
-            
+                }.buttonStyle(PaymentButtonStyle())
+                Spacer()
+                HStack{
+                    Text("Total: ").bold().font(.headline)
+                    Text("$32.35").bold().font(.headline)
+                }.padding()
+                
+            }.padding(.horizontal, 20)
+            .padding(.top, 10)
+
             HStack{
                 Button(action: {
 
                 }) {
-                    Image(systemName: "ellipsis")
+                    VStack{
+                        Image(systemName: "number").resizable().frame(width: 18.0, height: 18.0)
+                        Text("Quantity").font(.subheadline)
+                    }
+                }.buttonStyle(PlainButtonStyle())
+                .padding()
+                Button(action: {
+
+                }) {
+                    VStack{
+                        Image(systemName: "plus").resizable().frame(width: 18.0, height: 18.0)
+                        Text("Add Extra Item").font(.subheadline)
+                    }
+                    
+
+                }.buttonStyle(PlainButtonStyle())
+                .padding()
+                Button(action: {
+
+                }) {
+                    VStack{
+                        Image(systemName: "percent").resizable().frame(width: 18.0, height: 18.0)
+                        Text("Discount Order").font(.subheadline)
+                    }
+                    
+
                 }.buttonStyle(PlainButtonStyle())
                         .padding()
                 Button(action: {
 
                 }) {
-                    Image(systemName: "ellipsis")
+                    VStack{
+                        Image(systemName: "ticket").resizable().frame(width: 26.0, height: 18.0)
+                        Text("Dining Option").font(.subheadline)
+                    }
+                    
+
                 }.buttonStyle(PlainButtonStyle())
                         .padding()
+                Spacer()
+                Image(systemName: "chevron.right")
                 Button(action: {
 
                 }) {
-                    Image(systemName: "ellipsis")
-                }.buttonStyle(PlainButtonStyle())
-                        .padding()
-                Button(action: {
-
-                }) {
-                    Image(systemName: "ellipsis")
-                }.buttonStyle(PlainButtonStyle())
-                        .padding()
-
-                Button(action: {
-
-                }) {
-                    Text("Pay")
-                }.buttonStyle(PlainButtonStyle())
-                        .padding()
+                    VStack{
+                        Text("$32.35").font(.title)
+                        Text("Pay").font(.subheadline)
+                    }
+                }.buttonStyle(PaymentButtonStyle())
             }
+            .padding(10)
         }
-        .background(Color.init(red: 0.5, green: 0.5, blue: 0.5, opacity: 0.5))
+        .background(Color.init(red: 1.0, green: 1.0, blue: 1.0, opacity: 0.6))
+        .background(Color.gray.shadow(radius: 5))
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
     
     fileprivate func rightSide() -> some View {
-        return VStack(alignment: .center, spacing: 0){
-            Text("Category").font(.largeTitle).padding(.horizontal, 10)
+        return VStack(alignment: .leading, spacing: 0){
+            Text("Category").font(.headline)
+                .padding(.horizontal, 20)
+                .padding(.top, 20)
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing:0){
                     ForEach(0 ..< categoryList.count){ item in
@@ -156,42 +311,45 @@ struct SetTable: View {
                                 .multilineTextAlignment(.center)
                         })
                         .buttonStyle(SmallSquareButtonStyle())
+                        .padding(.leading, item == 0 ? 10 : 0)
                     }
                 }
             }
-            Text("Sub Category").font(.largeTitle).padding(.horizontal, 10)
+            Text("Sub Category").font(.headline).padding(.horizontal, 20)
 
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing:0){
-                    ForEach(0 ..< subCategoryList.count){ item in
+                    ForEach(0 ..< pizzaSubCategoryList.count){ item in
                         Button(action: {
                             
                         }, label: {
-                            Text(subCategoryList[item])
+                            Text(pizzaSubCategoryList[item])
                                 .frame(minWidth: squareDimension, maxWidth: squareDimension, minHeight: squareDimension, maxHeight: squareDimension)
                                 .padding()
                                 .font(.system(size: btnFontSize))
                                 .multilineTextAlignment(.center)
                         })
                         .buttonStyle(SmallSquareButtonStyle())
+                        .padding(.leading, item == 0 ? 10 : 0)
                     }
                 }
             }
-            Text("Products").font(.largeTitle).padding(.horizontal, 10)
+            Text("Products").font(.headline).padding(.horizontal, 20)
 
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing:0){
-                    ForEach(0 ..< productList.count){ item in
+                    ForEach(0 ..< pizzaProductList.count){ item in
                         Button(action: {
                             
                         }, label: {
-                            Text(productList[item])
+                            Text(pizzaProductList[item])
                                 .frame(minWidth: squareDimension, maxWidth: squareDimension, minHeight: squareDimension, maxHeight: squareDimension)
                                 .padding()
                                 .font(.system(size: btnFontSize))
                                 .multilineTextAlignment(.center)
                         })
                         .buttonStyle(SmallSquareButtonStyle())
+                        .padding(.leading, item == 0 ? 10 : 0)
                     }
                 }
             }
@@ -202,10 +360,23 @@ struct SetTable: View {
 
 struct SmallSquareButtonStyle: ButtonStyle {
     func makeBody(configuration: Self.Configuration) -> some View {
-            configuration.label.padding(5)
+            configuration.label.padding(3)
             .background(!configuration.isPressed ?
-                            Color.init(red: 0/255, green: 0/255, blue: 0/255, opacity: 0.4):
-                            Color.init(red: 0/255, green: 0/255, blue: 255/255, opacity: 0.4)
+                            Color.init(red: 0/255, green: 0/255, blue: 0/255, opacity: 0.3):
+                            Color.init(red: 0/255, green: 0/255, blue: 255/255, opacity: 0.3)
+                            )
+            .foregroundColor(!configuration.isPressed ? .white : .black)
+            .cornerRadius(3)
+            .padding(3)
+    }
+}
+
+struct PaymentButtonStyle: ButtonStyle {
+    func makeBody(configuration: Self.Configuration) -> some View {
+            configuration.label.padding()
+            .background(!configuration.isPressed ?
+                            Color.init(red: 0/255, green: 0/255, blue: 0/255, opacity: 1.0):
+                            Color.init(red: 0/255, green: 0/255, blue: 255/255, opacity: 1.0)
                             )
             .foregroundColor(!configuration.isPressed ? .white : .black)
             .cornerRadius(5)

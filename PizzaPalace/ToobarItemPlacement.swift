@@ -105,6 +105,23 @@ struct Sidebar: View {
                         }
                 }
             }
+            
+            VStack{
+                Spacer()
+                HStack{
+                    Text("Estimated wait time:")
+                        .foregroundColor(Color.white)
+                        .font(.system(size: 14))
+                    Spacer()
+                }
+                HStack{
+                    Text("23 min")
+                        .foregroundColor(Color.green)
+                        .font(.system(size: 22)).padding(.leading, 35)
+                    Spacer()
+                }
+            }.padding()
+            
             HStack{
                 Image(systemName: "questionmark.circle.fill")
                     .foregroundColor(Color.white)

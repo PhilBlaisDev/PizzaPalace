@@ -13,7 +13,7 @@ struct DetailedView: View {
     @FetchRequest(sortDescriptors:[])
     var users: FetchedResults<User>
     
-    @State var user: UserObject = UserObject(username: "Test User")
+    @State var user: UserObject = UserObject(username: "employee@email.com")
     
     var body: some View {
         Spacer()
