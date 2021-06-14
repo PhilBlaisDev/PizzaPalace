@@ -20,6 +20,10 @@ struct UserObject {
     var lastName = ""
     var phone = ""
     var note = ""
+    var cardNumber = ""
+    var expDate = ""
+    var csc = ""
+    var isLoyaltyMember = false
 }
 
 class DisplayedView: ObservableObject {

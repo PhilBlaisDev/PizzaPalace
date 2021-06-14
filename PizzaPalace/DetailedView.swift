@@ -86,9 +86,3 @@ struct DetailedView: View {
         Spacer()
     }
 }
-
-//struct DetailedView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        DetailedView(showLoginView: true)
-//    }
-//}
