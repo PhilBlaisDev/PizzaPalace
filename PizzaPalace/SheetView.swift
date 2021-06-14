@@ -20,15 +20,20 @@ struct SheetView: View {
 
     var body: some View {
         VStack(alignment: .leading){
-            Text("Create Customer Account").padding(20).font(.largeTitle)
-            Divider()
+            Text("Create Customer Account")
+                    .font(.largeTitle)
+                    .foregroundColor(Color.white)
+                    .padding(.horizontal, 20)
+                    .padding(.top, 20)
+                    .padding(.bottom, 10)
             HStack{
-                leftSide()
-                rightSide()
-            }
+                leftSide().padding()
+                rightSide().padding()
+            }.background(Color.white)
+
         }
         .frame(width:1200, height: 800, alignment: .top)
-        .padding()
+        .background(Color.black)
     }
     
     
@@ -45,11 +50,30 @@ struct SheetView: View {
             HStack(spacing: 10) {
                 Spacer()
                 VStack{
-                    TextField("First Name", text: $user.firstName).textFieldStyle(PlainTextFieldStyle()).padding(10)
-                    TextField("Last Name", text: $user.lastName).textFieldStyle(PlainTextFieldStyle()).padding(10)
-                    TextField("Email", text: $user.email).textFieldStyle(PlainTextFieldStyle()).padding(10)
-                    TextField("Password", text: $user.password).textFieldStyle(PlainTextFieldStyle()).padding(10)
-                    TextField("Phone Number", text: $user.phone).textFieldStyle(PlainTextFieldStyle()).padding(10)
+                    HStack{
+                        Text("First Name:").frame(width: 100, alignment: .leading)
+                        TextField("First Name", text: $user.firstName).textFieldStyle(PlainTextFieldStyle()).padding(10)
+                    }
+
+                    HStack{
+                        Text("Last Name:").frame(width: 100, alignment: .leading)
+                        TextField("Last Name", text: $user.lastName).textFieldStyle(PlainTextFieldStyle()).padding(10)
+                    }
+
+                    HStack{
+                        Text("Email:").frame(width: 100, alignment: .leading)
+                        TextField("Email", text: $user.email).textFieldStyle(PlainTextFieldStyle()).padding(10)
+                    }
+
+                    HStack{
+                        Text("Phone Number:").frame(width: 100, alignment: .leading)
+                        TextField("Phone Number", text: $user.phone).textFieldStyle(PlainTextFieldStyle()).padding(10)
+                    }
+
+                    HStack{
+                        Text("Password:").frame(width: 100, alignment: .leading)
+                        SecureField("Password", text: $user.password).textFieldStyle(PlainTextFieldStyle()).padding(10)
+                    }
                 }
             }
             
@@ -79,14 +103,11 @@ struct SheetView: View {
                 .padding(.bottom, 0)
                 .font(.largeTitle)
             Divider().padding(.horizontal, 20)
-            
-            TextField("Notes", text: $username)
-                .textFieldStyle(PlainTextFieldStyle())
-                .padding(.vertical, 20)
-                .padding(.horizontal, 40)
-
+            HStack {
+                Text("Notes:").frame(width: 100, alignment: .leading).padding(.leading, 20)
+                TextField("Notes", text: $user.note).textFieldStyle(PlainTextFieldStyle()).padding(10)
+            }
             Spacer()
-
         }
     }
     
@@ -116,13 +137,27 @@ struct SheetView: View {
             HStack(spacing: 10) {
                 Spacer()
                 VStack{
-                    TextField("House Number", text: $user.number).textFieldStyle(PlainTextFieldStyle()).padding(10)
-                    TextField("Street", text: $user.street).textFieldStyle(PlainTextFieldStyle()).padding(10)
-                    TextField("City", text: $user.city).textFieldStyle(PlainTextFieldStyle()).padding(10)
-                    TextField("Postal Code", text: $user.postalCode).textFieldStyle(PlainTextFieldStyle()).padding(10)
-                    TextField("Country", text: $user.country).textFieldStyle(PlainTextFieldStyle()).padding(10)
+                    HStack{
+                        Text("House Number:").frame(width: 100, alignment: .leading)
+                        SecureField("House Number", text: $user.number).textFieldStyle(PlainTextFieldStyle()).padding(10)
+                    }
+                    HStack{
+                        Text("Street:").frame(width: 100, alignment: .leading)
+                        SecureField("Street", text: $user.street).textFieldStyle(PlainTextFieldStyle()).padding(10)
+                    }
+                    HStack{
+                        Text("City:").frame(width: 100, alignment: .leading)
+                        SecureField("City", text: $user.city).textFieldStyle(PlainTextFieldStyle()).padding(10)
+                    }
+                    HStack{
+                        Text("Postal Code:").frame(width: 100, alignment: .leading)
+                        SecureField("Postal Code", text: $user.postalCode).textFieldStyle(PlainTextFieldStyle()).padding(10)
+                    }
+                    HStack{
+                        Text("Country:").frame(width: 100, alignment: .leading)
+                        SecureField("Country", text: $user.country).textFieldStyle(PlainTextFieldStyle()).padding(10)
+                    }
                 }
-                
             }
             Spacer()
             
