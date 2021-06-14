@@ -13,7 +13,7 @@ struct DetailedView: View {
     @FetchRequest(sortDescriptors:[])
     var users: FetchedResults<User>
     
-    @State var user: UserObject = UserObject(username: "employee@email.com")
+    @State var user: UserObject = UserObject(email: "employee@email.com")
     
     var body: some View {
         Spacer()
@@ -32,7 +32,7 @@ struct DetailedView: View {
                 HStack(){
                     Image(systemName: "envelope")
                         .foregroundColor(.green)
-                    TextField("Username", text: $user.username).textFieldStyle(PlainTextFieldStyle())
+                    TextField("Email", text: $user.email).textFieldStyle(PlainTextFieldStyle())
                         
                 }.frame(height: 60)
                 .padding(.horizontal, 20)

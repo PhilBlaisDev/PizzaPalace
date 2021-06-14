@@ -12,7 +12,6 @@ final class MenuItems: ObservableObject {
     @Published var allMenuItems: [ViewType] = [
         ViewType.init(type: "Quick Menu", order: 1, icon: "cursorarrow.click"),
         ViewType.init(type: "Orders", order: 2, icon: "text.badge.checkmark"),
-        ViewType.init(type: "Sales", order: 3, icon: "dollarsign.circle.fill"),
         ViewType.init(type: "Inventory", order: 4, icon: "list.triangle"),
         ViewType.init(type: "Customers", order: 5, icon: "person.circle.fill"),
         ViewType.init(type: "Reservations", order: 6, icon: "tablecells.badge.ellipsis.fill"),
@@ -70,7 +69,6 @@ struct ViewType: Identifiable, Hashable {
     let order: Int
     let icon: String
 }
-
 
 struct Sidebar: View {
     @Binding var displayViewId: Int
@@ -144,7 +142,6 @@ struct FullView: View {
         switch(type){
         case "Quick Menu": QuickMenu(displayViewId: $displayViewId)
             case "Orders": Orders()
-            case "Sales": Sales()
             case "Inventory": Inventory()
             case "Reservations": Inventory()
             case "Customers": Customers()

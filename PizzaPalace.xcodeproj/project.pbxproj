@@ -10,6 +10,7 @@
 		4A33FA9F2675168A00F63589 /* DetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A33FA9E2675168A00F63589 /* DetailedView.swift */; };
 		4A33FAA126751D1500F63589 /* SetTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A33FAA026751D1500F63589 /* SetTable.swift */; };
 		4A40FEAD26724A5600631543 /* QuickMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A40FEAC26724A5600631543 /* QuickMenu.swift */; };
+		4A69A51A2676EE1A00B568EC /* CreateCustomer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A69A5192676EE1A00B568EC /* CreateCustomer.swift */; };
 		4A7F002D2673108C0013F08C /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7F002C2673108C0013F08C /* SheetView.swift */; };
 		4AFD129C266BDE970030D928 /* PizzaPalaceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD129B266BDE970030D928 /* PizzaPalaceApp.swift */; };
 		4AFD129E266BDE970030D928 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD129D266BDE970030D928 /* Login.swift */; };
@@ -32,6 +33,7 @@
 		4A33FA9E2675168A00F63589 /* DetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedView.swift; sourceTree = "<group>"; };
 		4A33FAA026751D1500F63589 /* SetTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTable.swift; sourceTree = "<group>"; };
 		4A40FEAC26724A5600631543 /* QuickMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickMenu.swift; sourceTree = "<group>"; };
+		4A69A5192676EE1A00B568EC /* CreateCustomer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCustomer.swift; sourceTree = "<group>"; };
 		4A7F002C2673108C0013F08C /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
 		4AFD1298266BDE970030D928 /* PizzaPalace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PizzaPalace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AFD129B266BDE970030D928 /* PizzaPalaceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaPalaceApp.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				4A40FEAC26724A5600631543 /* QuickMenu.swift */,
 				4AFD12C4266D99840030D928 /* Reports.swift */,
 				4AFD12B6266C17900030D928 /* Customers.swift */,
+				4A69A5192676EE1A00B568EC /* CreateCustomer.swift */,
 				4A33FAA026751D1500F63589 /* SetTable.swift */,
 				4AFD12C0266D98A90030D928 /* Inventory.swift */,
 				4AFD12B8266C17930030D928 /* CLDP.swift */,
@@ -186,6 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4AFD12C5266D99840030D928 /* Reports.swift in Sources */,
+				4A69A51A2676EE1A00B568EC /* CreateCustomer.swift in Sources */,
 				4AFD12A8266BDE990030D928 /* PizzaPalace.xcdatamodeld in Sources */,
 				4A33FAA126751D1500F63589 /* SetTable.swift in Sources */,
 				4AFD12BB266C3E6A0030D928 /* ToobarItemPlacement.swift in Sources */,

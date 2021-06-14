@@ -17,7 +17,6 @@ struct MenuItem {
 
 struct QuickMenu: View {
     @Binding var displayViewId: Int
-
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.presentationMode) var presentationMode
     @State private var showingSheet = false
@@ -28,7 +27,7 @@ struct QuickMenu: View {
         VStack(spacing: 0){
             HStack(spacing:0){
                 Button(action: {
-                    self.displayViewId = 2
+                    showingSheet.toggle()
                 }, label: {
                     Text("Create Customer account")
                         .frame(minWidth: squareDimension, maxWidth: squareDimension, minHeight: squareDimension, maxHeight: squareDimension)
@@ -38,9 +37,12 @@ struct QuickMenu: View {
                 })
                 .padding()
                 .buttonStyle(SquareButtonStyle())
+                .sheet(isPresented: $showingSheet) {
+                    SheetView()
+                }
 
                 Button(action: {
-                    self.displayViewId = 3
+                    self.displayViewId = 2
                 }, label: {
                     Text("Place Order")
                         .frame(minWidth: squareDimension, maxWidth: squareDimension, minHeight: squareDimension, maxHeight: squareDimension)
@@ -83,12 +85,6 @@ struct QuickMenu: View {
         }.background(Color.white)
     }
 }
-
-//struct QuickMenu_Previews: PreviewProvider {
-//    static var previews: some View {
-//        QuickMenu().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-//    }
-//}
 
 struct SquareButtonStyle: ButtonStyle {
     func makeBody(configuration: Self.Configuration) -> some View {

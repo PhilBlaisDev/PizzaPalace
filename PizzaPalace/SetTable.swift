@@ -102,13 +102,12 @@ struct SetTable: View {
             VStack{
                 HStack{
                     VStack(alignment: .leading){
-                        Text("16\" Build your own").bold().font(.title3).frame(width:180, alignment: .leading)
+                        Text("16\" Margherita").bold().font(.title3).frame(width:180, alignment: .leading)
                         Text("Mozarella").padding(.leading, 20)
-                        Text("Pepperoni").padding(.leading, 20)
-                        Text("Black Olives").padding(.leading, 20)
+                        Text("Onion").padding(.leading, 20)
+                        Text("Capicollo").padding(.leading, 20)
                         Text("Basil").padding(.leading, 20)
-                        Text("Mushrooms").padding(.leading, 20)
-                        Text("Cheddar").padding(.leading, 20)
+                        Text("Parmeggiano").padding(.leading, 20)
                     }
                     Spacer()
                     VStack(alignment: .trailing){
@@ -134,13 +133,13 @@ struct SetTable: View {
                             Spacer()
                             Text("1")
                             Spacer()
-                            Text("$1.00")
+                            Text("$2.00")
                         }
                         HStack{
                             Spacer()
                             Text("1")
                             Spacer()
-                            Text("$1.00")
+                            Text("$0.00")
                         }
                         HStack{
                             Spacer()
@@ -148,22 +147,16 @@ struct SetTable: View {
                             Spacer()
                             Text("$1.25")
                         }
-                        HStack{
-                            Spacer()
-                            Text("1")
-                            Spacer()
-                            Text("$1.50")
-                        }
                     }
                 }.padding()
                 
                 Divider()
                 HStack{
-                    Text("Wings").bold().font(.title3).frame(width:180, alignment: .leading)
+                    Text("Ginger Ale").bold().font(.title3).frame(width:180, alignment: .leading)
                     Spacer()
                     Text("1").bold().font(.title3).padding(.leading, 16)
                     Spacer()
-                    Text("$4.95").bold().font(.title3)
+                    Text("$1.95").bold().font(.title3)
                 }.padding()
                 Divider()
 
@@ -172,7 +165,7 @@ struct SetTable: View {
                     Spacer()
                     Text("1").bold().font(.title3).padding(.leading, 16)
                     Spacer()
-                    Text("$4.49").bold().font(.title3)
+                    Text("$5.49").bold().font(.title3)
                 }.padding()
                 Divider()
                 HStack{
@@ -198,7 +191,7 @@ struct SetTable: View {
                 
                 VStack(alignment: .trailing){
                     Text("$0.00")
-                    Text("$29.68")
+                    Text("$27.68")
                     Text("$0.00")
                     Text("$2.67")
                 }.padding()
@@ -210,23 +203,26 @@ struct SetTable: View {
 
                 }) {
                     Text("Cancel")
-                }.buttonStyle(PaymentButtonStyle())
+                }.buttonStyle(BlackButtonStyle())
+                
                 Button(action: {
 
 
                 }) {
                     Text("Hold")
-                }.buttonStyle(PaymentButtonStyle())
+                }.buttonStyle(BlackButtonStyle())
+                
                 Button(action: {
 
 
                 }) {
                     Text("Send")
-                }.buttonStyle(PaymentButtonStyle())
+                }.buttonStyle(BlackButtonStyle())
+                
                 Spacer()
                 HStack{
                     Text("Total: ").bold().font(.headline)
-                    Text("$32.35").bold().font(.headline)
+                    Text("$30.35").bold().font(.headline)
                 }.padding()
                 
             }.padding(.horizontal, 20)
@@ -281,10 +277,10 @@ struct SetTable: View {
 
                 }) {
                     VStack{
-                        Text("$32.35").font(.title)
+                        Text("$30.35").font(.title)
                         Text("Pay").font(.subheadline)
                     }
-                }.buttonStyle(PaymentButtonStyle())
+                }.buttonStyle(BlackButtonStyle())
             }
             .padding(10)
         }
@@ -371,7 +367,7 @@ struct SmallSquareButtonStyle: ButtonStyle {
     }
 }
 
-struct PaymentButtonStyle: ButtonStyle {
+struct BlackButtonStyle: ButtonStyle {
     func makeBody(configuration: Self.Configuration) -> some View {
             configuration.label.padding()
             .background(!configuration.isPressed ?

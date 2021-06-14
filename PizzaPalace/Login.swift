@@ -9,8 +9,17 @@ import SwiftUI
 import CoreData
 
 struct UserObject {
-    var username = "Me"
     var password = "823he92389u"
+    var number = ""
+    var street = ""
+    var postalCode = ""
+    var city = ""
+    var country = ""
+    var email = ""
+    var firstName = ""
+    var lastName = ""
+    var phone = ""
+    var note = ""
 }
 
 class DisplayedView: ObservableObject {
@@ -29,6 +38,9 @@ struct Login: View {
             }
             else if displayedView.displayViewId == 2 {
                 SetTable(displayViewId: $displayedView.displayViewId)
+            }
+            else if displayedView.displayViewId == 10 {
+                CreateCustomer(displayViewId: $displayedView.displayViewId)
             }
             else {
                 DetailedView(displayViewId: $displayedView.displayViewId)
