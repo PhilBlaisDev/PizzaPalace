@@ -36,7 +36,7 @@ struct ToobarItemPlacement: View {
                     displayViewId: $displayViewId,
                     menu: menu,
                     selectedMenuItem: $selectedMenuItem
-               )
+               ).frame(minWidth: 100)
                 .background(SwiftUI.Color.black.edgesIgnoringSafeArea(.all))
            }
         }
@@ -140,7 +140,7 @@ struct FullView: View {
     let type: String
     var body: some View {
         switch(type){
-        case "Quick Menu": QuickMenu(displayViewId: $displayViewId)
+            case "Quick Menu": QuickMenu(displayViewId: $displayViewId)
             case "Orders": Orders()
             case "Inventory": Inventory()
             case "Reservations": Inventory()
@@ -149,7 +149,7 @@ struct FullView: View {
             case "Reports": Reports()
             case "Loyalty Program": CLDP()
             case "settings": Setup()
-            default: Setup()
+            default: Reports()
         }
     }
 }

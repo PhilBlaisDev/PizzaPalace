@@ -43,6 +43,12 @@ struct Login: View {
             else if displayedView.displayViewId == 2 {
                 SetTable(displayViewId: $displayedView.displayViewId)
             }
+            else if displayedView.displayViewId == 3 {
+                Reports()
+            }
+            else if displayedView.displayViewId == 4 {
+                CLDP()
+            }
             else if displayedView.displayViewId == 10 {
                 CreateCustomer(displayViewId: $displayedView.displayViewId)
             }

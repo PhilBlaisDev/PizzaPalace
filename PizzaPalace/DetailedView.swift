@@ -16,73 +16,74 @@ struct DetailedView: View {
     @State var user: UserObject = UserObject(email: "employee@email.com")
 
     var body: some View {
-        Spacer()
-        HStack(spacing: 50) {
+        HStack {
             Spacer()
-            Image("pizza")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(maxWidth: 250)
-                    .padding([.top, .horizontal], 15.0)
-        }
-        Spacer()
-        HStack(spacing: 50) {
-            Spacer()
-            VStack(spacing: 10) {
-                HStack {
-                    Image(systemName: "envelope")
-                            .foregroundColor(.green)
-                    TextField("Email", text: $user.email).textFieldStyle(PlainTextFieldStyle())
-                }.frame(height: 60)
-                        .padding(.horizontal, 20)
-                        .background(Color.white)
-                        .cornerRadius(8)
-                        .padding(.horizontal, 20)
-
-                HStack() {
-                    Image(systemName: "lock")
-                            .foregroundColor(.green)
-                    SecureField("Password", text: $user.password)
-                            .textFieldStyle(PlainTextFieldStyle())
-
-                }.frame(height: 60)
-                        .padding(.horizontal, 20)
-                        .background(Color.white)
-                        .cornerRadius(8)
-                        .padding(.horizontal, 20)
-
-                HStack() {
-                    Button(action: {
-
-                    }, label: {
-                        Text("Forgot Password").foregroundColor(Color.red).font(Font.headline.weight(.bold))
-                    }).buttonStyle(PlainButtonStyle())
-                    .padding(.horizontal, 30)
-                    Spacer()
-                }.frame(height: 10)
-            }
-            VStack {
-                Button(action: {
-                    self.displayViewId = 1
-                }, label: {
-                    Text("Login")
-                })
+            VStack(alignment: .trailing) {
+                Image("pizza")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(maxWidth: 360)
+                        .padding(.top, 25.0)
+                        .padding([.trailing], 0.0)
                 Spacer()
-                Button(action: {
+                VStack(spacing: 0) {
+                    VStack(spacing: 0) {
+                        HStack {
+                            HStack {
+                                Image(systemName: "envelope")
+                                        .foregroundColor(.green).padding(.leading, 10)
+                                TextField("Email", text: $user.email).textFieldStyle(PlainTextFieldStyle())
+                            }.frame(height: 60)
+                                    .background(Color.white)
+                                    .cornerRadius(8)
+                                    .padding(.horizontal, 10)
+                                    .padding(.vertical, 10)
 
-                }, label: {
-                    Text("Need Help?").foregroundColor(Color.red).font(Font.headline.weight(.bold))
-                }).buttonStyle(PlainButtonStyle())
+                            Button(action: {
+                                self.displayViewId = 1
+                            }, label: {
+                                Text("Login").frame(minWidth: 50, minHeight: 35)
+                            })
+
+                        }
+                        HStack {
+                            HStack() {
+                                Image(systemName: "lock")
+                                        .foregroundColor(.green)
+                                        .padding(.leading, 10)
+                                SecureField("Password", text: $user.password)
+                                        .textFieldStyle(PlainTextFieldStyle())
+                            }.frame(height: 60)
+                                    .background(Color.white)
+                                    .cornerRadius(8)
+                                    .padding(.horizontal, 10)
+                                    .padding(.vertical, 10)
+
+                            Button(action: {
+
+                            }, label: {
+                                Text("Need Help?").foregroundColor(Color.red).font(Font.headline.weight(.bold))
+                            }).buttonStyle(PlainButtonStyle())
+                        }
+
+                        HStack() {
+                            Button(action: {
+
+                            }, label: {
+                                Text("Forgot Password").foregroundColor(Color.red).font(Font.headline.weight(.bold))
+                            }).buttonStyle(PlainButtonStyle())
+                                    .padding(.horizontal, 20)
+                                    .padding(.top, 10)
+
+                            Spacer()
+                        }.frame(height: 10)
+                    }.padding(40)
+                            .background(Color.init(red: 133 / 255, green: 194 / 255, blue: 39 / 255, opacity: 0.93))
+                            .cornerRadius(15)
+                }
                 Spacer()
-            }.frame(height: 120)
-            Spacer()
-        }
-        .padding(.leading, 20)
-        .padding(.trailing, 20)
-        .padding(.top, 25)
-        .padding(.bottom, 20)
-        .background(Color.init(red: 133 / 255, green: 194 / 255, blue: 39 / 255, opacity: 0.9))
-
-        Spacer()
+            }.padding(.trailing, 40)
+                    .frame(width: 700)
+        }.frame(width: 1300, height: 900)
     }
 }

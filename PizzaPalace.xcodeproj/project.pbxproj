@@ -3,13 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		347D17FFEDDB5D9DEA43D70B /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347D186ABBC02CAE46119145 /* LineChart.swift */; };
+		347D18329F193963818FC194 /* PieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347D12B916B16511A193A03D /* PieChart.swift */; };
+		347D19C4B3E4B7123D63A755 /* Chart1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347D1DC879B05896CCE86DEE /* Chart1.swift */; };
+		347D1E923CDFE9BE930FB457 /* YearlyRevenueTransactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347D123AC721CD0A2C48B67C /* YearlyRevenueTransactions.swift */; };
 		4A33FA9F2675168A00F63589 /* DetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A33FA9E2675168A00F63589 /* DetailedView.swift */; };
 		4A33FAA126751D1500F63589 /* SetTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A33FAA026751D1500F63589 /* SetTable.swift */; };
 		4A40FEAD26724A5600631543 /* QuickMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A40FEAC26724A5600631543 /* QuickMenu.swift */; };
+		4A56A243267CF36900334181 /* RevenueTransactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A56A242267CF36900334181 /* RevenueTransactions.swift */; };
 		4A69A51A2676EE1A00B568EC /* CreateCustomer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A69A5192676EE1A00B568EC /* CreateCustomer.swift */; };
 		4A7F002D2673108C0013F08C /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7F002C2673108C0013F08C /* SheetView.swift */; };
 		4AFD129C266BDE970030D928 /* PizzaPalaceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD129B266BDE970030D928 /* PizzaPalaceApp.swift */; };
@@ -27,12 +32,20 @@
 		4AFD12C1266D98A90030D928 /* Inventory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD12C0266D98A90030D928 /* Inventory.swift */; };
 		4AFD12C3266D98DD0030D928 /* Suppliers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD12C2266D98DD0030D928 /* Suppliers.swift */; };
 		4AFD12C5266D99840030D928 /* Reports.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD12C4266D99840030D928 /* Reports.swift */; };
+		4DF736EE974A8E73F7DD27C3 /* Pods_PizzaPalace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 463DA039CA86B9770439C52D /* Pods_PizzaPalace.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		228C94C70C61B5CFF8959B93 /* Pods-PizzaPalace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PizzaPalace.debug.xcconfig"; path = "Target Support Files/Pods-PizzaPalace/Pods-PizzaPalace.debug.xcconfig"; sourceTree = "<group>"; };
+		347D123AC721CD0A2C48B67C /* YearlyRevenueTransactions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YearlyRevenueTransactions.swift; sourceTree = "<group>"; };
+		347D12B916B16511A193A03D /* PieChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieChart.swift; sourceTree = "<group>"; };
+		347D186ABBC02CAE46119145 /* LineChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
+		347D1DC879B05896CCE86DEE /* Chart1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chart1.swift; sourceTree = "<group>"; };
+		463DA039CA86B9770439C52D /* Pods_PizzaPalace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PizzaPalace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A33FA9E2675168A00F63589 /* DetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedView.swift; sourceTree = "<group>"; };
 		4A33FAA026751D1500F63589 /* SetTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTable.swift; sourceTree = "<group>"; };
 		4A40FEAC26724A5600631543 /* QuickMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickMenu.swift; sourceTree = "<group>"; };
+		4A56A242267CF36900334181 /* RevenueTransactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevenueTransactions.swift; sourceTree = "<group>"; };
 		4A69A5192676EE1A00B568EC /* CreateCustomer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCustomer.swift; sourceTree = "<group>"; };
 		4A7F002C2673108C0013F08C /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
 		4AFD1298266BDE970030D928 /* PizzaPalace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PizzaPalace.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,6 +66,7 @@
 		4AFD12C0266D98A90030D928 /* Inventory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inventory.swift; sourceTree = "<group>"; };
 		4AFD12C2266D98DD0030D928 /* Suppliers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Suppliers.swift; sourceTree = "<group>"; };
 		4AFD12C4266D99840030D928 /* Reports.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reports.swift; sourceTree = "<group>"; };
+		DE7125ADE005E5AE798BA68B /* Pods-PizzaPalace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PizzaPalace.release.xcconfig"; path = "Target Support Files/Pods-PizzaPalace/Pods-PizzaPalace.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,17 +74,39 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DF736EE974A8E73F7DD27C3 /* Pods_PizzaPalace.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		17506C1232B0EE17D31F4815 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				463DA039CA86B9770439C52D /* Pods_PizzaPalace.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		33EE62DBDF882FC65BB0135D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				228C94C70C61B5CFF8959B93 /* Pods-PizzaPalace.debug.xcconfig */,
+				DE7125ADE005E5AE798BA68B /* Pods-PizzaPalace.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		4AFD128F266BDE970030D928 = {
 			isa = PBXGroup;
 			children = (
+				4A56A242267CF36900334181 /* RevenueTransactions.swift */,
 				4AFD129A266BDE970030D928 /* PizzaPalace */,
 				4AFD1299266BDE970030D928 /* Products */,
+				33EE62DBDF882FC65BB0135D /* Pods */,
+				17506C1232B0EE17D31F4815 /* Frameworks */,
+				347D123AC721CD0A2C48B67C /* YearlyRevenueTransactions.swift */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,6 +143,9 @@
 				4AFD12A1266BDE990030D928 /* Preview Content */,
 				4AFD12BA266C3E6A0030D928 /* ToobarItemPlacement.swift */,
 				4A7F002C2673108C0013F08C /* SheetView.swift */,
+				347D1DC879B05896CCE86DEE /* Chart1.swift */,
+				347D12B916B16511A193A03D /* PieChart.swift */,
+				347D186ABBC02CAE46119145 /* LineChart.swift */,
 			);
 			path = PizzaPalace;
 			sourceTree = "<group>";
@@ -126,9 +165,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4AFD12AD266BDE990030D928 /* Build configuration list for PBXNativeTarget "PizzaPalace" */;
 			buildPhases = (
+				06A704BB157331C80893EBAD /* [CP] Check Pods Manifest.lock */,
 				4AFD1294266BDE970030D928 /* Sources */,
 				4AFD1295266BDE970030D928 /* Frameworks */,
 				4AFD1296266BDE970030D928 /* Resources */,
+				8159EE5A420F611F2E9A0532 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -183,6 +224,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		06A704BB157331C80893EBAD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PizzaPalace-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8159EE5A420F611F2E9A0532 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PizzaPalace/Pods-PizzaPalace-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PizzaPalace/Pods-PizzaPalace-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PizzaPalace/Pods-PizzaPalace-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4AFD1294266BDE970030D928 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -192,6 +275,7 @@
 				4A69A51A2676EE1A00B568EC /* CreateCustomer.swift in Sources */,
 				4AFD12A8266BDE990030D928 /* PizzaPalace.xcdatamodeld in Sources */,
 				4A33FAA126751D1500F63589 /* SetTable.swift in Sources */,
+				4A56A243267CF36900334181 /* RevenueTransactions.swift in Sources */,
 				4AFD12BB266C3E6A0030D928 /* ToobarItemPlacement.swift in Sources */,
 				4AFD12C1266D98A90030D928 /* Inventory.swift in Sources */,
 				4A33FA9F2675168A00F63589 /* DetailedView.swift in Sources */,
@@ -206,6 +290,10 @@
 				4AFD12B7266C17900030D928 /* Customers.swift in Sources */,
 				4A40FEAD26724A5600631543 /* QuickMenu.swift in Sources */,
 				4AFD12B9266C17930030D928 /* CLDP.swift in Sources */,
+				347D19C4B3E4B7123D63A755 /* Chart1.swift in Sources */,
+				347D18329F193963818FC194 /* PieChart.swift in Sources */,
+				347D17FFEDDB5D9DEA43D70B /* LineChart.swift in Sources */,
+				347D1E923CDFE9BE930FB457 /* YearlyRevenueTransactions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,11 +417,12 @@
 		};
 		4AFD12AE266BDE990030D928 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 228C94C70C61B5CFF8959B93 /* Pods-PizzaPalace.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = PizzaPalace/PizzaPalace.entitlements;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"PizzaPalace/Preview Content\"";
@@ -354,11 +443,12 @@
 		};
 		4AFD12AF266BDE990030D928 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE7125ADE005E5AE798BA68B /* Pods-PizzaPalace.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = PizzaPalace/PizzaPalace.entitlements;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"PizzaPalace/Preview Content\"";
