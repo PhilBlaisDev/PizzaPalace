@@ -25,56 +25,41 @@ struct CLDP: View {
 
         ScrollView(showsIndicators: false) {
             VStack(spacing: 0) {
-                Text("CLDP")
-                LazyVGrid(columns: threeColumnGrid) {
-                    ForEach(cells, id: \.self) { item in
-                        item
-                    }
-                }
+                VStack(spacing: 0) {
+                    HStack {
+                        cells[0]
+                        Divider()
+                        cells[1]
+                        Divider()
+                        cells[2]
+                    }.fixedSize(horizontal: false, vertical: false)
+                    Divider()
+                    Spacer().padding()
+                    HStack {
+                        cells[3]
+                        Divider()
+                        cells[4]
+                        Divider()
+                        cells[5]
+                        Divider()
+                        cells[6]
+                    }.fixedSize(horizontal: false, vertical: false)
+                    Divider()
+                }.padding(20)
                 Spacer()
-                HStack{
-                    PieChart().frame(width: 400,height: 500)
-                    VStack{
-                        Spacer()
-                        Text("")
-                        Text("Placeholder Text")
-                        Text("Placeholder Text")
-                        Text("Placeholder Text")
-                        Spacer()
-                    }
-                }
-
-                LineChart(entries: YearlyRevenueTransaction.dataEntriesForYear(22, transactions: YearlyRevenueTransaction.allTransactions))
-                        .frame(height: 500)
-                        .padding()
-
+                titleView(title: "Customers by discount")
                 HStack {
                     Spacer()
-                    Button(action: {
+                    PieChart(entries: CustomerDiscounts.dataEntriesForYear(22, transactions: CustomerDiscounts.allTransactions)).frame(width: 400, height: 500)
+                    Spacer()
+                }
 
-                    }, label: {
-                        Text("Export to PDF")
-                    }).buttonStyle(BlackButtonStyle())
+                titleView(title: "Customer Visits")
 
-                    Button(action: {
-
-                    }, label: {
-                        Text("Export to Excel")
-                    }).buttonStyle(BlackButtonStyle())
-
-                    Button(action: {
-
-                    }, label: {
-                        Text("Export to CSV")
-                    }).buttonStyle(BlackButtonStyle())
-                }.padding()
-            }
+                CxVisitsLineChart(entries: CustomerVisitsTransactions.dataEntriesForYear(22, transactions: CustomerVisitsTransactions.allTransactions))
+                        .frame(height: 500)
+                        .padding()
+            }.padding()
         }
-    }
-}
-
-struct CLDP_Previews: PreviewProvider {
-    static var previews: some View {
-        CLDP().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

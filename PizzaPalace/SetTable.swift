@@ -380,4 +380,3 @@ struct BlackButtonStyle: ButtonStyle {
     }
 }
 
-

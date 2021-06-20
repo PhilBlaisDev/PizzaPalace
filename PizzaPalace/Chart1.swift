@@ -67,9 +67,6 @@ struct Chart1 : NSViewRepresentable {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
         leftAxis.valueFormatter = DefaultAxisValueFormatter(formatter: formatter)
-//        print("Legend = \(RevenueTransaction.formatForLeftSideLegend())")
-//        leftAxis.valueFormatter = IndexAxisValueFormatter(values: RevenueTransaction.formatForLeftSideLegend())
-
     }
     
     func formatXAxis(xAxis: XAxis){

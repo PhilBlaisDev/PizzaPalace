@@ -1,7 +1,7 @@
 import Charts
 import SwiftUI
 
-struct LineChart : NSViewRepresentable {
+struct CxVisitsLineChart : NSViewRepresentable {
     
     var entries : [ChartDataEntry]
     typealias NSViewType = LineChartView
@@ -26,7 +26,7 @@ struct LineChart : NSViewRepresentable {
 
     func addData() -> LineChartData{
         let data = LineChartData()
-        let ds1 = LineChartDataSet(entries: entries, label: "Yearly Sales")
+        let ds1 = LineChartDataSet(entries: entries, label: "Customer Visits")
         ds1.colors = [NSUIColor.red]
         ds1.circleColors = [NSColor.init(red: 133 / 255, green: 194 / 255, blue: 39 / 255, alpha: 0.93)]
 
@@ -37,27 +37,17 @@ struct LineChart : NSViewRepresentable {
     
     func formatLeftAxis(leftAxis: YAxis){
         let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
+        formatter.numberStyle = .none
         leftAxis.valueFormatter = DefaultAxisValueFormatter(formatter: formatter)
     }
-    
+
     func formatXAxis(xAxis: XAxis){
-        xAxis.valueFormatter = IndexAxisValueFormatter(values: YearlyRevenueTransaction.months)
+        xAxis.valueFormatter = IndexAxisValueFormatter(values: RevenueTransaction.time)
         xAxis.labelPosition = .bottom
+//        xAxis.axisMinimum = 0
     }
 
     func formatLegend(legend:Legend){
-//        legend.horizontalAlignment = .right
-//        legend.verticalAlignment = .top
-//        legend.drawInside = true
-//        legend.yOffset = 30.0
+
     }
 }
-
-
-
-//struct LineChart_Previews: PreviewProvider {
-//    static var previews: some View {
-////        LineChart(entries: RevenueTransaction.dataEntriesForDay(22, transactions: RevenueTransaction.allTransactions), entries2: RevenueTransaction.dataEntriesForDay(22, transactions: RevenueTransaction.allTransactions))
-//    }
-//}

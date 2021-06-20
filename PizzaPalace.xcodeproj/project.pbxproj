@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		347D17AB8B3650EE1ECAACDE /* CustomersDiscounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347D12C69FF039607F52B4ED /* CustomersDiscounts.swift */; };
 		347D17FFEDDB5D9DEA43D70B /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347D186ABBC02CAE46119145 /* LineChart.swift */; };
 		347D18329F193963818FC194 /* PieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347D12B916B16511A193A03D /* PieChart.swift */; };
 		347D19C4B3E4B7123D63A755 /* Chart1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347D1DC879B05896CCE86DEE /* Chart1.swift */; };
+		347D1C7812C65E687B81CFBE /* CxVisitsLineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347D14D8AA6FB0A15ED1A4C7 /* CxVisitsLineChart.swift */; };
+		347D1D49A3C7C5965B9C79CC /* CustomerVisitsTransactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347D1E1CDA96DB86A6C7578E /* CustomerVisitsTransactions.swift */; };
 		347D1E923CDFE9BE930FB457 /* YearlyRevenueTransactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347D123AC721CD0A2C48B67C /* YearlyRevenueTransactions.swift */; };
 		4A33FA9F2675168A00F63589 /* DetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A33FA9E2675168A00F63589 /* DetailedView.swift */; };
 		4A33FAA126751D1500F63589 /* SetTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A33FAA026751D1500F63589 /* SetTable.swift */; };
@@ -39,8 +42,11 @@
 		228C94C70C61B5CFF8959B93 /* Pods-PizzaPalace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PizzaPalace.debug.xcconfig"; path = "Target Support Files/Pods-PizzaPalace/Pods-PizzaPalace.debug.xcconfig"; sourceTree = "<group>"; };
 		347D123AC721CD0A2C48B67C /* YearlyRevenueTransactions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YearlyRevenueTransactions.swift; sourceTree = "<group>"; };
 		347D12B916B16511A193A03D /* PieChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieChart.swift; sourceTree = "<group>"; };
+		347D12C69FF039607F52B4ED /* CustomersDiscounts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomersDiscounts.swift; sourceTree = "<group>"; };
+		347D14D8AA6FB0A15ED1A4C7 /* CxVisitsLineChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CxVisitsLineChart.swift; sourceTree = "<group>"; };
 		347D186ABBC02CAE46119145 /* LineChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
 		347D1DC879B05896CCE86DEE /* Chart1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chart1.swift; sourceTree = "<group>"; };
+		347D1E1CDA96DB86A6C7578E /* CustomerVisitsTransactions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerVisitsTransactions.swift; sourceTree = "<group>"; };
 		463DA039CA86B9770439C52D /* Pods_PizzaPalace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PizzaPalace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A33FA9E2675168A00F63589 /* DetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedView.swift; sourceTree = "<group>"; };
 		4A33FAA026751D1500F63589 /* SetTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTable.swift; sourceTree = "<group>"; };
@@ -85,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				463DA039CA86B9770439C52D /* Pods_PizzaPalace.framework */,
+				347D12C69FF039607F52B4ED /* CustomersDiscounts.swift */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -107,6 +114,7 @@
 				33EE62DBDF882FC65BB0135D /* Pods */,
 				17506C1232B0EE17D31F4815 /* Frameworks */,
 				347D123AC721CD0A2C48B67C /* YearlyRevenueTransactions.swift */,
+				347D1E1CDA96DB86A6C7578E /* CustomerVisitsTransactions.swift */,
 			);
 			sourceTree = "<group>";
 		};
@@ -146,6 +154,7 @@
 				347D1DC879B05896CCE86DEE /* Chart1.swift */,
 				347D12B916B16511A193A03D /* PieChart.swift */,
 				347D186ABBC02CAE46119145 /* LineChart.swift */,
+				347D14D8AA6FB0A15ED1A4C7 /* CxVisitsLineChart.swift */,
 			);
 			path = PizzaPalace;
 			sourceTree = "<group>";
@@ -294,6 +303,9 @@
 				347D18329F193963818FC194 /* PieChart.swift in Sources */,
 				347D17FFEDDB5D9DEA43D70B /* LineChart.swift in Sources */,
 				347D1E923CDFE9BE930FB457 /* YearlyRevenueTransactions.swift in Sources */,
+				347D1C7812C65E687B81CFBE /* CxVisitsLineChart.swift in Sources */,
+				347D1D49A3C7C5965B9C79CC /* CustomerVisitsTransactions.swift in Sources */,
+				347D17AB8B3650EE1ECAACDE /* CustomersDiscounts.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

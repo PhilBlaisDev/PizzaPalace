@@ -28,38 +28,38 @@ struct ToobarItemPlacement: View {
     @StateObject var menu = MenuItems()
     @State private var selectedMenuItem: String? = "Quick Menu"
     let array = ["My Account", "Log out"]
-    
+
     var body: some View {
-        VStack{
+        VStack {
             NavigationView {
-               Sidebar(
-                    displayViewId: $displayViewId,
-                    menu: menu,
-                    selectedMenuItem: $selectedMenuItem
-               ).frame(minWidth: 100)
-                .background(SwiftUI.Color.black.edgesIgnoringSafeArea(.all))
-           }
-        }
-        .toolbar {
-            ToolbarItemGroup() {
-                Menu {
-                    ForEach(array, id: \.self) { item in
-                        Button(action: {  }) {
-                            Text(item)
-                        }
-                    }
-                } label: {
-                    HStack(){
-                        Image(systemName: "person.circle.fill").foregroundColor(Color.black)
-                        Text("My Profile").font(.headline)
-                            .foregroundColor(Color.black)
-                    }
-                }
-                .background(Color.init(red: 0/255, green: 0/255, blue: 0/255, opacity: 0.1))
-                .cornerRadius(15)
+                Sidebar(
+                        displayViewId: $displayViewId,
+                        menu: menu,
+                        selectedMenuItem: $selectedMenuItem
+                ).frame(minWidth: 100)
+                        .background(SwiftUI.Color.black.edgesIgnoringSafeArea(.all))
             }
         }
-        .background(SwiftUI.Color.black.edgesIgnoringSafeArea(.all))
+                .toolbar {
+                    ToolbarItemGroup {
+                        Menu {
+                            ForEach(array, id: \.self) { item in
+                                Button(action: {}) {
+                                    Text(item)
+                                }
+                            }
+                        } label: {
+                            HStack() {
+                                Image(systemName: "person.circle.fill").foregroundColor(Color.black)
+                                Text("My Profile").font(.headline)
+                                        .foregroundColor(Color.black)
+                            }
+                        }
+                                .background(Color.init(red: 0 / 255, green: 0 / 255, blue: 0 / 255, opacity: 0.1))
+                                .cornerRadius(15)
+                    }
+                }
+                .background(SwiftUI.Color.black.edgesIgnoringSafeArea(.all))
     }
 }
 
@@ -76,62 +76,62 @@ struct Sidebar: View {
     @Binding var selectedMenuItem: String?
 
     var body: some View {
-        VStack{
+        VStack {
             Image("pizza")
                     .resizable()
                     .scaledToFit()
-                .padding(.horizontal, 10)
-                .padding(.top, 10)
+                    .padding(.horizontal, 10)
+                    .padding(.top, 10)
             List {
                 ForEach(menu.allMenuItems, id: \.self) { folder in
-                        NavigationLink(
+                    NavigationLink(
                             destination: FullView(displayViewId: $displayViewId, type: folder.type)
-                                .frame(maxWidth: .infinity)
-                                .background(Color.white)
-                                .navigationTitle(selectedMenuItem ?? ""),
+                                    .frame(maxWidth: .infinity)
+                                    .background(Color.white)
+                                    .navigationTitle(selectedMenuItem ?? ""),
                             tag: folder.type,
                             selection: $selectedMenuItem
-                        ) {
-                                HStack{
-                                    Image(systemName: folder.icon)
-                                        .foregroundColor(Color.white)
-                                        .font(.system(size: 18))
-                                    Text(folder.type)
-                                        .foregroundColor(Color.white)
-                                        .font(.system(size: 18))
-                                }
+                    ) {
+                        HStack {
+                            Image(systemName: folder.icon)
+                                    .foregroundColor(Color.white)
+                                    .font(.system(size: 18))
+                            Text(folder.type)
+                                    .foregroundColor(Color.white)
+                                    .font(.system(size: 18))
                         }
+                    }
                 }
             }
-            
-            VStack{
+
+            VStack {
                 Spacer()
-                HStack{
+                HStack {
                     Text("Estimated wait time:")
-                        .foregroundColor(Color.white)
-                        .font(.system(size: 14))
+                            .foregroundColor(Color.white)
+                            .font(.system(size: 14))
                     Spacer()
                 }
-                HStack{
+                HStack {
                     Text("23 min")
-                        .foregroundColor(Color.green)
-                        .font(.system(size: 22)).padding(.leading, 35)
+                            .foregroundColor(Color.green)
+                            .font(.system(size: 22)).padding(.leading, 35)
                     Spacer()
                 }
             }.padding()
-            
-            HStack{
+
+            HStack {
                 Image(systemName: "questionmark.circle.fill")
-                    .foregroundColor(Color.white)
-                    .font(.system(size: 18))
+                        .foregroundColor(Color.white)
+                        .font(.system(size: 18))
                 Text("Help")
-                    .foregroundColor(Color.white)
-                    .font(.system(size: 18))
+                        .foregroundColor(Color.white)
+                        .font(.system(size: 18))
                 Spacer()
-                    
+
             }.padding()
         }
-        .background(Color.black)
+                .background(Color.black)
     }
 }
 
@@ -139,17 +139,17 @@ struct FullView: View {
     @Binding var displayViewId: Int
     let type: String
     var body: some View {
-        switch(type){
-            case "Quick Menu": QuickMenu(displayViewId: $displayViewId)
-            case "Orders": Orders()
-            case "Inventory": Inventory()
-            case "Reservations": Inventory()
-            case "Customers": Customers()
-            case "Suppliers": Suppliers()
-            case "Reports": Reports()
-            case "Loyalty Program": CLDP()
-            case "settings": Setup()
-            default: Reports()
+        switch (type) {
+        case "Quick Menu": QuickMenu(displayViewId: $displayViewId)
+        case "Orders": Orders()
+        case "Inventory": Inventory()
+        case "Reservations": Inventory()
+        case "Customers": Customers()
+        case "Suppliers": Suppliers()
+        case "Reports": Reports()
+        case "Loyalty Program": CLDP()
+        case "settings": Setup()
+        default: Reports()
         }
     }
 }
@@ -157,15 +157,46 @@ struct FullView: View {
 struct MenuButtonStyle: ButtonStyle {
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
-            .padding(12)
-            
-            // Indigo background color on release, yellow on press.
-            .background(!configuration.isPressed ?
-                Color.init(red: 218/255, green: 36/255, blue: 28/255) :
-                            Color.init(red: 133/255, green: 194/255, blue: 39/255))
-            
-            // White text color on release, black on press.
-            .foregroundColor(!configuration.isPressed ? .white : .black)
-            .cornerRadius(8)
+                .padding(12)
+
+                // Indigo background color on release, yellow on press.
+                .background(!configuration.isPressed ?
+                        Color.init(red: 218 / 255, green: 36 / 255, blue: 28 / 255) :
+                        Color.init(red: 133 / 255, green: 194 / 255, blue: 39 / 255))
+
+                // White text color on release, black on press.
+                .foregroundColor(!configuration.isPressed ? .white : .black)
+                .cornerRadius(8)
+    }
+}
+
+struct DropdownOption: Hashable {
+    let key: String
+    let value: String
+
+    public static func == (lhs: DropdownOption, rhs: DropdownOption) -> Bool {
+        return lhs.key == rhs.key
+    }
+}
+
+struct DropdownRow: View {
+    var option: DropdownOption
+    var onOptionSelected: ((_ option: DropdownOption) -> Void)?
+
+    var body: some View {
+        Button(action: {
+            if let onOptionSelected = self.onOptionSelected {
+                onOptionSelected(self.option)
+            }
+        }) {
+            HStack {
+                Text(self.option.value)
+                        .font(.system(size: 14))
+                        .foregroundColor(Color.black)
+                Spacer()
+            }
+        }
+                .padding(.horizontal, 16)
+                .padding(.vertical, 5)
     }
 }
