@@ -47,14 +47,14 @@ struct CLDP: View {
                     Divider()
                 }.padding(20)
                 Spacer()
-                titleView(title: "Customers by discount")
+                titleView(title: "Customers by discount", filterArray: ["day", "month", "year"])
                 HStack {
                     Spacer()
                     PieChart(entries: CustomerDiscounts.dataEntriesForYear(22, transactions: CustomerDiscounts.allTransactions)).frame(width: 400, height: 500)
                     Spacer()
                 }
 
-                titleView(title: "Customer Visits")
+                titleView(title: "Customer Visits", filterArray: ["day", "month", "year"])
 
                 CxVisitsLineChart(entries: CustomerVisitsTransactions.dataEntriesForYear(22, transactions: CustomerVisitsTransactions.allTransactions))
                         .frame(height: 500)

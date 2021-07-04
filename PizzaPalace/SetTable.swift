@@ -39,9 +39,6 @@ struct SetTable: View {
     private let dessertsProductList = [""]
     private let pastaProductList = [""]
 
-    
-    
-    
     var body: some View {
         
         HStack(spacing:0){
@@ -82,7 +79,6 @@ struct SetTable: View {
         return VStack(alignment: .center){
             HStack{
                 Button(action: {
-
 
                 }) {
                     Label("Beatrice Lestrange", systemImage: "person.circle")
@@ -267,8 +263,6 @@ struct SetTable: View {
                         Image(systemName: "ticket").resizable().frame(width: 26.0, height: 18.0)
                         Text("Dining Option").font(.subheadline)
                     }
-                    
-
                 }.buttonStyle(PlainButtonStyle())
                         .padding()
                 Spacer()
@@ -284,8 +278,7 @@ struct SetTable: View {
             }
             .padding(10)
         }
-        .background(Color.init(red: 1.0, green: 1.0, blue: 1.0, opacity: 0.6))
-        .background(Color.gray.shadow(radius: 5))
+        .background(Color.init(red: 240/255, green: 240/255, blue: 240/255, opacity: 1.0).shadow(radius: 5))
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
     
@@ -358,7 +351,7 @@ struct SmallSquareButtonStyle: ButtonStyle {
     func makeBody(configuration: Self.Configuration) -> some View {
             configuration.label.padding(3)
             .background(!configuration.isPressed ?
-                            Color.init(red: 0/255, green: 0/255, blue: 0/255, opacity: 0.3):
+                            Color.blue:
                             Color.init(red: 0/255, green: 0/255, blue: 255/255, opacity: 0.3)
                             )
             .foregroundColor(!configuration.isPressed ? .white : .black)

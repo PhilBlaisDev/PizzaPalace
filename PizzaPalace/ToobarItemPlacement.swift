@@ -40,26 +40,28 @@ struct ToobarItemPlacement: View {
                         .background(SwiftUI.Color.black.edgesIgnoringSafeArea(.all))
             }
         }
-                .toolbar {
-                    ToolbarItemGroup {
-                        Menu {
-                            ForEach(array, id: \.self) { item in
-                                Button(action: {}) {
-                                    Text(item)
-                                }
-                            }
-                        } label: {
-                            HStack() {
-                                Image(systemName: "person.circle.fill").foregroundColor(Color.black)
-                                Text("My Profile").font(.headline)
-                                        .foregroundColor(Color.black)
-                            }
+        .toolbar {
+            ToolbarItemGroup {
+                Menu {
+                    ForEach(array, id: \.self) { item in
+                        Button(action: {
+                            self.displayViewId = 0
+                        }) {
+                            Text(item)
                         }
-                                .background(Color.init(red: 0 / 255, green: 0 / 255, blue: 0 / 255, opacity: 0.1))
-                                .cornerRadius(15)
+                    }
+                } label: {
+                    HStack() {
+                        Image(systemName: "person.circle.fill").foregroundColor(Color.black)
+                        Text("My Profile").font(.headline)
+                                .foregroundColor(Color.black)
                     }
                 }
-                .background(SwiftUI.Color.black.edgesIgnoringSafeArea(.all))
+                        .background(Color.init(red: 0 / 255, green: 0 / 255, blue: 0 / 255, opacity: 0.1))
+                        .cornerRadius(15)
+            }
+        }
+        .background(SwiftUI.Color.black.edgesIgnoringSafeArea(.all))
     }
 }
 

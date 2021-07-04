@@ -49,7 +49,7 @@ struct Reports: View {
                     Divider()
                 }.padding(20)
 
-                titleView(title: "Revenue vs. Cost")
+                titleView(title: "Revenue vs. Staff Cost", filterArray: ["Date", "Amount", "Time"])
 
                 Chart1(entries: RevenueTransaction.dataEntriesForDay(22, transactions: RevenueTransaction.allTransactions),
                         entries2: RevenueTransaction.dataEntriesForDay(22, transactions: RevenueTransaction.allEmployeeTransactions)
@@ -58,7 +58,7 @@ struct Reports: View {
                         .padding(.vertical, 20)
                         .shadow(radius: 2)
 
-                titleView(title: "Yearly Sales")
+                titleView(title: "Sales", filterArray: ["from: to:", "Date", "Amount", "Time"])
 
                 LineChart(entries: YearlyRevenueTransaction.dataEntriesForYear(22, transactions: YearlyRevenueTransaction.allTransactions))
                         .frame(height: 500).shadow(radius: 2)
@@ -81,10 +81,15 @@ struct ReportCell: View, Hashable {
     }
 }
 
+// Yearly Salres filter from: to:,
+// Customer by discount day, week and month
+// Customer Visits day, week and month
+
+
 struct titleView: View, Hashable {
     var title: String
     let array = ["Export to PDF", "Export to Excel", "Export to CSV"]
-    let filterArray = ["Date", "Amount", "Time"]
+    var filterArray:Array<String>
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
